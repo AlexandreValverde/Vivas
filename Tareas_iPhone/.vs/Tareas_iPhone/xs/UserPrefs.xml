@@ -9,7 +9,7 @@
         <State name="__root__">
           <Node name="Tareas_iPhone" expanded="True">
             <Node name="Tareas" expanded="True">
-              <Node name="Main.storyboard" selected="True" />
+              <Node name="ViewController.cs" selected="True" />
             </Node>
           </Node>
         </State>

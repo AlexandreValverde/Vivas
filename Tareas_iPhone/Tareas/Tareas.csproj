@@ -112,9 +112,45 @@
         <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
             <Visible>false</Visible>
         </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\Filtrar.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\Filtrar.imageset\filtrar_75px.png" />
+        <ImageAsset Include="Assets.xcassets\Filtrar.imageset\filtrar_50px.png" />
+        <ImageAsset Include="Assets.xcassets\Filtrar.imageset\filtrar_25px.png" />
+        <ImageAsset Include="Assets.xcassets\Lista.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\Lista.imageset\lista_original_75px.png" />
+        <ImageAsset Include="Assets.xcassets\Lista.imageset\lista_original_50px.png" />
+        <ImageAsset Include="Assets.xcassets\Lista.imageset\lista_original_25px.png" />
+        <ImageAsset Include="Assets.xcassets\Lista Selected.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\Lista Selected.imageset\lista_selected_original_75px.png" />
+        <ImageAsset Include="Assets.xcassets\Lista Selected.imageset\lista_selected_original_50px.png" />
+        <ImageAsset Include="Assets.xcassets\Lista Selected.imageset\lista_selected_original_25px.png" />
+        <ImageAsset Include="Assets.xcassets\Add.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\Add.imageset\add_75px.png" />
+        <ImageAsset Include="Assets.xcassets\Add.imageset\add_50px.png" />
+        <ImageAsset Include="Assets.xcassets\Add.imageset\add_25px.png" />
+        <ImageAsset Include="Assets.xcassets\Add Selected.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\Add Selected.imageset\add_selected_75px.png" />
+        <ImageAsset Include="Assets.xcassets\Add Selected.imageset\add_selected_50px.png" />
+        <ImageAsset Include="Assets.xcassets\Add Selected.imageset\add_selected_25px.png" />
+        <ImageAsset Include="Assets.xcassets\Usuario.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\Usuario Selected.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\Usuario Selected.imageset\perfil_selected_original_75px.png" />
+        <ImageAsset Include="Assets.xcassets\Usuario Selected.imageset\perfil_selected_original_50px.png" />
+        <ImageAsset Include="Assets.xcassets\Usuario Selected.imageset\perfil_selected_original_25px.png" />
+        <ImageAsset Include="Assets.xcassets\Usuario.imageset\perfil_original_75px.png" />
+        <ImageAsset Include="Assets.xcassets\Usuario.imageset\perfil_original_50px.png" />
+        <ImageAsset Include="Assets.xcassets\Usuario.imageset\perfil_original_25px.png" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />
+        <Folder Include="Assets.xcassets\Filtrar.imageset\" />
+        <Folder Include="Assets.xcassets\Lista.imageset\" />
+        <Folder Include="Assets.xcassets\Lista Selected.imageset\" />
+        <Folder Include="Assets.xcassets\Add.imageset\" />
+        <Folder Include="Assets.xcassets\Add Selected.imageset\" />
+        <Folder Include="Assets.xcassets\Usuario.imageset\" />
+        <Folder Include="Assets.xcassets\Usuario Selected.imageset\" />
+        <Folder Include="Assets.xcassets\Exit.imageset\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
