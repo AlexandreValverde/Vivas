@@ -1,5 +1,9 @@
 # Vivas
-Proyecto
+<b>DESCRIPCIÓN:</b>
+Programa para la gestión de tareas o trabajos, permitiendo añadir, modificar o eliminar tareas entre varios usuarios.
+
+
+<h2>AVANCES</h2>
 
 - <b>12/09/2019</b>
 App IOS creada. Para crear el proyecto utilicé Visual Studio 2019 para Mac con Xamarin. Para hacer la interfaz gráfica utilizo Xcode 11.
