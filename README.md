@@ -1,7 +1,7 @@
 # Vivas
 Proyecto
 
-- 12/09/2019
+<b>- 12/09/2019</b>
 App IOS creada. Para crear el proyecto utilicé Visual Studio 2019 para Mac con Xamarin. Para hacer la interfaz gráfica utilizo Xcode 11.
 
 - 18/09/2019
