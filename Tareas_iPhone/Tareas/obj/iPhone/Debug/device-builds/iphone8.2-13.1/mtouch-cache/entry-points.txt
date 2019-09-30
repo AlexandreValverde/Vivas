@@ -1,0 +1,27 @@
+Function=SystemNative_ConvertErrorPlatformToPal
+	/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/mtouch-cache/1-Link/mscorlib.dll
+Function=SystemNative_ConvertErrorPalToPlatform
+	/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/mtouch-cache/1-Link/mscorlib.dll
+Function=SystemNative_StrErrorR
+	/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/mtouch-cache/1-Link/mscorlib.dll
+Function=SystemNative_GetNonCryptographicallySecureRandomBytes
+	/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/mtouch-cache/1-Link/mscorlib.dll
+Function=SystemNative_Stat2
+	/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/mtouch-cache/1-Link/mscorlib.dll
+Function=SystemNative_LStat2
+	/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/mtouch-cache/1-Link/mscorlib.dll
+Function=xamarin_timezone_get_local_name
+	/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/mtouch-cache/1-Link/mscorlib.dll
+Function=xamarin_timezone_get_data
+	/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/mtouch-cache/1-Link/mscorlib.dll
+Function=xamarin_log
+	/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/mtouch-cache/1-Link/mscorlib.dll
+Function=xamarin_find_protocol_wrapper_type
+	/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/mtouch-cache/1-Link/Xamarin.iOS.dll
+Function=xamarin_release_block_on_main_thread
+	/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/mtouch-cache/1-Link/Xamarin.iOS.dll
+Function=xamarin_get_block_descriptor
+	/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/mtouch-cache/1-Link/Xamarin.iOS.dll
+Function=UIApplicationMain
+	/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/mtouch-cache/1-Link/Xamarin.iOS.dll
+Function=mono_pmip

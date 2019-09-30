@@ -1,0 +1,7 @@
+RemoveDynamicRegistrar:true
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/bin/iPhone/Debug/device-builds/iphone8.2-13.1/Tareas.app:/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/mtouch-cache/1-Link/Tareas.exe
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/bin/iPhone/Debug/device-builds/iphone8.2-13.1/Tareas.app:/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/mtouch-cache/1-Link/mscorlib.dll
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/bin/iPhone/Debug/device-builds/iphone8.2-13.1/Tareas.app:/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/mtouch-cache/1-Link/Xamarin.iOS.dll
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/bin/iPhone/Debug/device-builds/iphone8.2-13.1/Tareas.app:/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/mtouch-cache/1-Link/System.dll
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/bin/iPhone/Debug/device-builds/iphone8.2-13.1/Tareas.app:/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/mtouch-cache/1-Link/System.Core.dll
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/bin/iPhone/Debug/device-builds/iphone8.2-13.1/Tareas.app:/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/mtouch-cache/1-Link/System.Net.Http.dll

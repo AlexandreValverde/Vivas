@@ -67,7 +67,7 @@
         <Reference Include="System.Numerics.Vectors" />
     </ItemGroup>
     <ItemGroup>
-      <PackageReference Include="Xamarin.Essentials" Version="1.3.0" />
+      <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
     </ItemGroup>
     <ItemGroup>
         <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -151,6 +151,16 @@
         <Folder Include="Assets.xcassets\Usuario.imageset\" />
         <Folder Include="Assets.xcassets\Usuario Selected.imageset\" />
         <Folder Include="Assets.xcassets\Exit.imageset\" />
+        <Folder Include="Tareas\" />
+        <Folder Include="Tareas\Lista\" />
+        <Folder Include="Tareas\Filtrar\" />
+        <Folder Include="Tareas\Datos\" />
+        <Folder Include="Nueva\" />
+        <Folder Include="Nueva\Add\" />
+        <Folder Include="Nueva\Crear\" />
+        <Folder Include="Nueva\Buscar\" />
+        <Folder Include="Usuario\" />
+        <Folder Include="Sesion\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -163,9 +173,73 @@
     <ItemGroup>
         <Compile Include="Main.cs" />
         <Compile Include="AppDelegate.cs" />
-        <Compile Include="ViewController.cs" />
-        <Compile Include="ViewController.designer.cs">
-            <DependentUpon>ViewController.cs</DependentUpon>
+        <Compile Include="Tareas\Lista\Lista_Tareas_ViewController.cs" />
+        <Compile Include="Tareas\Lista\Lista_Tareas_ViewController.designer.cs">
+          <DependentUpon>Lista_Tareas_ViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Tareas\Lista\Lista_Tareas_TableSource.cs" />
+        <Compile Include="Tareas\Lista\Lista_Tareas_TableViewCell.cs" />
+        <Compile Include="Tareas\Lista\Lista_Tareas_TableViewCell.designer.cs">
+          <DependentUpon>Lista_Tareas_TableViewCell.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Tareas\Filtrar\Filtrar_Tareas_ViewController.cs" />
+        <Compile Include="Tareas\Filtrar\Filtrar_Tareas_ViewController.designer.cs">
+          <DependentUpon>Filtrar_Tareas_ViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Tareas\Datos\Datos_Tarea_ViewController.cs" />
+        <Compile Include="Tareas\Datos\Datos_Tarea_ViewController.designer.cs">
+          <DependentUpon>Datos_Tarea_ViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Tareas\Datos\Datos_Tarea_TableSource.cs" />
+        <Compile Include="Tareas\Datos\Datos_Tarea_TableViewCell.cs" />
+        <Compile Include="Tareas\Datos\Datos_Tarea_TableViewCell.designer.cs">
+          <DependentUpon>Datos_Tarea_TableViewCell.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Nueva\Add\Add_Tarea_ViewController.cs" />
+        <Compile Include="Nueva\Add\Add_Tarea_ViewController.designer.cs">
+          <DependentUpon>Add_Tarea_ViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Nueva\Crear\Crear_Tarea_ViewController.cs" />
+        <Compile Include="Nueva\Crear\Crear_Tarea_ViewController.designer.cs">
+          <DependentUpon>Crear_Tarea_ViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Nueva\Crear\Crear_Tarea_TableSource.cs" />
+        <Compile Include="Nueva\Crear\Crear_Tarea_TableViewCell1.cs" />
+        <Compile Include="Nueva\Crear\Crear_Tarea_TableViewCell1.designer.cs">
+          <DependentUpon>Crear_Tarea_TableViewCell1.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Nueva\Crear\Crear_Tarea_TableViewCell2.cs" />
+        <Compile Include="Nueva\Crear\Crear_Tarea_TableViewCell2.designer.cs">
+          <DependentUpon>Crear_Tarea_TableViewCell2.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Nueva\Crear\Crear_Tarea_TableViewCell3.cs" />
+        <Compile Include="Nueva\Crear\Crear_Tarea_TableViewCell3.designer.cs">
+          <DependentUpon>Crear_Tarea_TableViewCell3.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Nueva\Crear\Crear_Tarea_TableViewCell4.cs" />
+        <Compile Include="Nueva\Crear\Crear_Tarea_TableViewCell4.designer.cs">
+          <DependentUpon>Crear_Tarea_TableViewCell4.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Nueva\Buscar\Buscar_Ubic_ViewController.cs" />
+        <Compile Include="Nueva\Buscar\Buscar_Ubic_ViewController.designer.cs">
+          <DependentUpon>Buscar_Ubic_ViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Nueva\Buscar\Buscar_Ubic_TableSource.cs" />
+        <Compile Include="Nueva\Buscar\Buscar_Ubic_TableViewCell.cs" />
+        <Compile Include="Nueva\Buscar\Buscar_Ubic_TableViewCell.designer.cs">
+          <DependentUpon>Buscar_Ubic_TableViewCell.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Usuario\Usuario_ViewController.cs" />
+        <Compile Include="Usuario\Usuario_ViewController.designer.cs">
+          <DependentUpon>Usuario_ViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Usuario\Creditos_ViewController.cs" />
+        <Compile Include="Usuario\Creditos_ViewController.designer.cs">
+          <DependentUpon>Creditos_ViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Sesion\Sesion_ViewController.cs" />
+        <Compile Include="Sesion\Sesion_ViewController.designer.cs">
+          <DependentUpon>Sesion_ViewController.cs</DependentUpon>
         </Compile>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

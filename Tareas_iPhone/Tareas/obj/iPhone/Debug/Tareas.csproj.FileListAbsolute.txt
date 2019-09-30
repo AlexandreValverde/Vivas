@@ -1,0 +1,13 @@
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/bin/iPhone/Debug/Tareas.exe
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/bin/iPhone/Debug/Tareas.pdb
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/bin/iPhone/Debug/Xamarin.Essentials.dll
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/bin/iPhone/Debug/Xamarin.Essentials.pdb
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/ibtool/_BundleResourceWithLogicalName.items
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/actool/_PartialAppManifest.items
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/actool/_BundleResourceWithLogicalName.items
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/coremlc/_PartialAppManifest.items
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/coremlc/_BundleResourceWithLogicalName.items
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/device-builds/iphone8.2-13.1/optimized/
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/Tareas.csproj.CopyComplete
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/Tareas.exe
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhone/Debug/Tareas.pdb
