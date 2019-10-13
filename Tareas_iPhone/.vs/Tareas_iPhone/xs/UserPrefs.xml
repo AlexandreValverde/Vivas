@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{5A00666A-592F-44CF-B5FE-90A2D813C7B2}|Default">
-  <MonoDevelop.Ide.ItemProperties.Tareas PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.af56e6f74fe11baab87fb88bb1a14a7fc9458a38" HideGettingStarted="True" />
+  <MonoDevelop.Ide.ItemProperties.Tareas PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.396F3790-47F2-42A0-A1F3-FA2939E0E7FB" HideGettingStarted="True" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Tareas/Main.storyboard">
     <Files>
       <File FileName="Tareas/Main.storyboard" />
@@ -18,7 +18,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
