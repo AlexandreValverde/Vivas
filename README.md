@@ -17,3 +17,9 @@ Avance en la interfaz de la app de IOS con Xcode 11.
 - <b>30/09/2019</b>
 Avance en la interfaz de la app de IOS con Visual Studio 2019 para Mac. ViewsControllers añadidos a cada vista.
 Base de datos en Mysql creada. Utilizó XAMPP para Mac y Windows. Para crear/editar las tablas utilizó Sequel Pro para Mac y HeidiSQL para Windows.
+
+- <b>13/10/19</b>
+Servidor Restfull creado. Utilizo Eclipse 2019 con Maven en JAVA.
+
+- <b>16/10/19</b>
+Archivo .gitignore añadido para ignorar archivos ".DS_Store".
