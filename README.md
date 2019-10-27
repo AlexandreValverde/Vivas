@@ -23,3 +23,6 @@ Servidor Restfull creado. Utilizo Eclipse 2019 con Maven en JAVA.
 
 - <b>16/10/19</b>
 Archivo .gitignore añadido para ignorar archivos ".DS_Store".
+
+- <b>27/10/19</b>
+Clases de conexión con el servidor y base de datos SQLite creados.
