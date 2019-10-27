@@ -16,7 +16,7 @@ namespace Tareas.Sesion
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnIni { get; set; }
+        UIKit.UIButton btnLogin { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -38,11 +38,19 @@ namespace Tareas.Sesion
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtUser { get; set; }
 
+        [Action ("Touch_BtnLogin:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void Touch_BtnLogin (UIKit.UIButton sender);
+
+        [Action ("Txt_ValueChanged:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void Txt_ValueChanged (UIKit.UITextField sender);
+
         void ReleaseDesignerOutlets ()
         {
-            if (btnIni != null) {
-                btnIni.Dispose ();
-                btnIni = null;
+            if (btnLogin != null) {
+                btnLogin.Dispose ();
+                btnLogin = null;
             }
 
             if (imgLogo != null) {

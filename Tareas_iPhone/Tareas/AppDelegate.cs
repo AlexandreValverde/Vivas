@@ -1,14 +1,17 @@
 ﻿using Foundation;
 using UIKit;
+using Tareas.Servidor;
 
 namespace Tareas
 {
-    // The UIApplicationDelegate for the application. This class is responsible for launching the
-    // User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
     [Register("AppDelegate")]
     public class AppDelegate : UIApplicationDelegate
     {
-        // class-level declarations
+        // Conexion servidor
+        public ServerConnection con;
+
+        // Conexion SQLite
+        public SQLiteManager scon;
 
         public override UIWindow Window
         {

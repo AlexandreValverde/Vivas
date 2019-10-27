@@ -65,6 +65,8 @@
         <Reference Include="Xamarin.iOS" />
         <Reference Include="System.Numerics" />
         <Reference Include="System.Numerics.Vectors" />
+        <Reference Include="Mono.Data.Sqlite" />
+        <Reference Include="System.Data" />
     </ItemGroup>
     <ItemGroup>
       <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
@@ -140,6 +142,8 @@
         <ImageAsset Include="Assets.xcassets\Usuario.imageset\perfil_original_75px.png" />
         <ImageAsset Include="Assets.xcassets\Usuario.imageset\perfil_original_50px.png" />
         <ImageAsset Include="Assets.xcassets\Usuario.imageset\perfil_original_25px.png" />
+        <ImageAsset Include="Assets.xcassets\Default logo.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\Default logo.imageset\Logo-Default.png" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />
@@ -161,6 +165,8 @@
         <Folder Include="Nueva\Buscar\" />
         <Folder Include="Usuario\" />
         <Folder Include="Sesion\" />
+        <Folder Include="Assets.xcassets\Default logo.imageset\" />
+        <Folder Include="Servidor\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -241,6 +247,10 @@
         <Compile Include="Sesion\Sesion_ViewController.designer.cs">
           <DependentUpon>Sesion_ViewController.cs</DependentUpon>
         </Compile>
+        <Compile Include="Servidor\ServerConnection.cs" />
+        <Compile Include="Servidor\SQLite.cs" />
+        <Compile Include="Servidor\URIData.cs" />
+        <Compile Include="Servidor\UserDataDefaults.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

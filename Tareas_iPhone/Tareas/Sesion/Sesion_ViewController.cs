@@ -13,6 +13,28 @@ namespace Tareas.Sesion
         {
             base.ViewDidLoad();
         }
+
+        /// <summary>
+        /// Value changed. Activa o desactiva boton de iniciar sesion.
+        /// </summary>
+        /// <param name="sender"></param>
+        partial void Txt_ValueChanged(UITextField sender)
+        {
+            btnLogin.Enabled = !string.IsNullOrWhiteSpace(txtUser.Text) && !string.IsNullOrWhiteSpace(txtPass.Text);
+        }
+
+        /// <summary>
+        /// Touch login. Comprueba datos contra el servidor.
+        /// </summary>
+        /// <param name="sender"></param>
+        partial void Touch_BtnLogin(UIButton sender)
+        {
+            // Desactivo boton
+            btnLogin.Enabled = false;
+
+            // Conexion con el servidor
+
+        }
     }
 }
 
