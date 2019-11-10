@@ -10,9 +10,11 @@ import javax.ws.rs.core.Response;
 public class Users {
 	
 	@GET
-	@Path("prueba")
+	@Path("login")
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response pruebaArchivo() {
+		
+		
 		return Response.ok("Hello world!").build();
 	}
 	

@@ -49,6 +49,11 @@
     	<artifactId>jersey-media-multipart</artifactId>
     	<version>2.29.1</version>
     </dependency>
+    <dependency>
+    	<groupId>org.apache.commons</groupId>
+    	<artifactId>commons-dbcp2</artifactId>
+    	<version>2.7.0</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>tareasvivas</finalName>
