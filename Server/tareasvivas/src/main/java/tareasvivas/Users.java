@@ -5,14 +5,41 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import aes.Encryptor;
+import io.jsonwebtoken.Jwts;
 import mysql.Mysql;
 
 @Path("/users")
 public class Users {
+	
+	/**
+	 * Añade nuevo usuario administrador.
+	 * @param nombre Nombre administrador.
+	 * @param email Email administrador.
+	 * @param pass Password administrador.
+	 * @return OK.
+	 */
+	@POST
+	@Path("nuevoadmin")
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response nuevoUsuario(@QueryParam("nombre") String nombre, @QueryParam("email") String email, @QueryParam("pass") String pass) {
+		try {
+			// Añado admin
+			new Mysql().nuevoAdmin(nombre, email, Encryptor.encrypt(pass));
+			
+			// Respuesta
+			return Response.ok().build();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return Response.status(Status.NOT_FOUND).build();
+		}
+	}
 	
 	/**
 	 * Añade usuario.
@@ -23,15 +50,20 @@ public class Users {
 	 */
 	@POST
 	@Path("nuevousuario")
+	@Secured
 	@Produces(MediaType.TEXT_PLAIN)
-	public Response nuevoUsuario(@QueryParam("nombre") String nombre, @QueryParam("email") String email, @QueryParam("pass") String pass) {
+	public Response nuevoUsuario(@Context HttpHeaders header, @QueryParam("nombre") String nombre, @QueryParam("email") String email, @QueryParam("pass") String pass) {
 		try {
+			// Obtiene ID usuario
+            int id = getID(header.getRequestHeader(HttpHeaders.AUTHORIZATION).get(0));
+			
 			// Añado usuario
-			new Mysql().nuevoUsuario(nombre, email, pass);
+			new Mysql().nuevoUsuario(id, nombre, email, Encryptor.encrypt(pass));
 			
 			// Respuesta
 			return Response.ok().build();
 		} catch (Exception e) {
+			e.printStackTrace();
 			return Response.status(Status.NOT_FOUND).build();
 		}
 	}
@@ -52,5 +84,14 @@ public class Users {
 		} catch (Exception e) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
+	}
+	
+	/**
+	 * Obtiene el ID del token del usuario.
+	 * @param token Token usuario.
+	 * @return ID usuario.
+	 */
+	private int getID (String token) {
+		return Integer.parseInt(Jwts.parser().setSigningKey(TokenFilter.KEY).parseClaimsJws(token).getBody().getSubject());
 	}
 }

@@ -17,6 +17,15 @@ namespace Tareas.Servidor
         }
 
         /// <summary>
+        /// Guarda el ID del usuario.
+        /// </summary>
+        /// <param name="id">ID del usuario.</param>
+        public static void SetUserID(int id)
+        {
+            NSUserDefaults.StandardUserDefaults.SetString(id.ToString(), "UserID");
+        }
+
+        /// <summary>
         /// Obtiene los datos para loguearse el usuario actual.
         /// </summary>
         /// <returns>Email y password.</returns>
@@ -37,6 +46,8 @@ namespace Tareas.Servidor
             }
             return null;
         }
+
+
     }
     #endregion
 }

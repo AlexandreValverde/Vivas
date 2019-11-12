@@ -1,13 +1,20 @@
 ﻿<Properties StartupConfiguration="{5A00666A-592F-44CF-B5FE-90A2D813C7B2}|Default">
   <MonoDevelop.Ide.ItemProperties.Tareas PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.935A5876-9058-4081-AD1D-3E7A70108EE1" HideGettingStarted="True" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Tareas/Servidor/ServerConnection.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Tareas/Main.storyboard">
     <Files>
       <File FileName="Tareas/Main.storyboard" />
-      <File FileName="Tareas/Sesion/Sesion_ViewController.cs" Line="36" Column="1" />
-      <File FileName="Tareas/Servidor/ServerConnection.cs" Line="17" Column="32" />
+      <File FileName="Tareas/Sesion/Sesion_ViewController.cs" />
+      <File FileName="Tareas/Servidor/ServerConnection.cs" />
       <File FileName="Tareas/Servidor/SQLite.cs" Line="25" Column="29" />
-      <File FileName="Tareas/Servidor/UserDataDefaults.cs" Line="39" Column="10" />
+      <File FileName="Tareas/Servidor/UserDataDefaults.cs" Line="50" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Tareas_iPhone" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />

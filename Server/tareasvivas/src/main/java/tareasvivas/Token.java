@@ -18,12 +18,13 @@ import mysql.Mysql;
 public class Token {
 
 	/**
-	 * Autentifica el dispositivo en la base de datos.
-	 * @param dispID ID encriptado del dispositivo.
-	 * @return Token con fecha de autentificacion casteada con ID.
+	 * Obtiene token usuario.
+	 * @param id ID usuario.
+	 * @param pass Password usuario.
+	 * @return Token.
 	 */
     @GET
-    @Path("lgn/{i}")
+    @Path("login")
     @Produces(MediaType.TEXT_PLAIN)
     public Response authenticateUser(@QueryParam("id") int id, @QueryParam("pass") String pass) {
         try {

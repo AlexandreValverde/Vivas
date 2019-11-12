@@ -62,7 +62,7 @@ public class Encryptor {
      * Crea fichero con clave AES.
      * @throws Exception Error al crear la clave.
      */
-    public void createKey() throws Exception {
+    public static void createKey() throws Exception {
     	// Crea fichero
     	File file = new File(keysPath + "aes.bin");
     	

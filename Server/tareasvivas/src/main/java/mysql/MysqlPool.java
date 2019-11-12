@@ -11,7 +11,7 @@ private static BasicDataSource ds = new BasicDataSource();
 	
 	static {
         ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        ds.setUsername("user");
+        ds.setUsername("uservivas");
         ds.setPassword("123456");
         ds.setUrl("jdbc:mysql://127.0.0.1:3306/tareas_vivas");
         ds.setMinIdle(50);
