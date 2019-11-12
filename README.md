@@ -26,3 +26,9 @@ Archivo .gitignore añadido para ignorar archivos ".DS_Store".
 
 - <b>27/10/19</b>
 Clases de conexión con el servidor y base de datos SQLite creados.
+
+- <b>10/11/19</b>
+Procedimientos y clase Mysql añadida al servidor.
+
+- <b>12/11/19</b>
+JSON Web Token añadido al servidor.
