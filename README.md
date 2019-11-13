@@ -32,3 +32,6 @@ Procedimientos y clase Mysql añadida al servidor.
 
 - <b>12/11/19</b>
 JSON Web Token añadido al servidor.
+
+- <b>13/11/19</b>
+Actualizacion tablas mysql.
