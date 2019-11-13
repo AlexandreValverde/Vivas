@@ -1,17 +1,25 @@
 ﻿<Properties StartupConfiguration="{5A00666A-592F-44CF-B5FE-90A2D813C7B2}|Default">
-  <MonoDevelop.Ide.ItemProperties.Tareas PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.935A5876-9058-4081-AD1D-3E7A70108EE1" HideGettingStarted="True" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Tareas/Main.storyboard">
+  <MonoDevelop.Ide.ItemProperties.Tareas PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.958F9918-8CB3-4D36-94BA-BE948C82CB85" HideGettingStarted="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Tareas/Sesion/Sesion_ViewController.cs">
     <Files>
       <File FileName="Tareas/Main.storyboard" />
-      <File FileName="Tareas/Sesion/Sesion_ViewController.cs" />
-      <File FileName="Tareas/Servidor/ServerConnection.cs" />
-      <File FileName="Tareas/Servidor/SQLite.cs" Line="25" Column="29" />
-      <File FileName="Tareas/Servidor/UserDataDefaults.cs" Line="50" Column="1" />
+      <File FileName="Tareas/AppDelegate.cs" Line="14" Column="35" />
+      <File FileName="Tareas/Sesion/Sesion_ViewController.cs" Line="61" Column="71" />
+      <File FileName="Tareas/Servidor/ServerConnection.cs" Line="19" Column="84" />
+      <File FileName="Tareas/Servidor/SQLite.cs" />
+      <File FileName="Tareas/Servidor/UserDataDefaults.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Tareas_iPhone" expanded="True" selected="True" />
+          <Node name="Tareas_iPhone" expanded="True">
+            <Node name="Tareas" expanded="True">
+              <Node name="Servidor" expanded="True" />
+              <Node name="Sesion" expanded="True">
+                <Node name="Sesion_ViewController.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>

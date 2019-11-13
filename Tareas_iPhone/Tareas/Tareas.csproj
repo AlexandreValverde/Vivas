@@ -167,6 +167,7 @@
         <Folder Include="Sesion\" />
         <Folder Include="Assets.xcassets\Default logo.imageset\" />
         <Folder Include="Servidor\" />
+        <Folder Include="Componentes\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -251,6 +252,16 @@
         <Compile Include="Servidor\SQLite.cs" />
         <Compile Include="Servidor\URIData.cs" />
         <Compile Include="Servidor\UserDataDefaults.cs" />
+        <Compile Include="Componentes\ButtonLoad.cs" />
+        <Compile Include="Componentes\ButtonLoad.designer.cs">
+          <DependentUpon>ButtonLoad.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Servidor\CrearJSON.cs" />
+        <Compile Include="Servidor\URIS.cs" />
+        <Compile Include="TabViewController.cs" />
+        <Compile Include="TabViewController.designer.cs">
+          <DependentUpon>TabViewController.cs</DependentUpon>
+        </Compile>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

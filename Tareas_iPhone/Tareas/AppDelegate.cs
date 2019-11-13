@@ -19,12 +19,44 @@ namespace Tareas
             set;
         }
 
+        public UIStoryboard MainStoryboard
+        {
+            get { return UIStoryboard.FromName("Main", NSBundle.MainBundle); }
+        }
+
+        public UIViewController GetViewController(UIStoryboard storyboard, string viewControllerName)
+        {
+            return storyboard.InstantiateViewController(viewControllerName);
+        }
+
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            // Override point for customization after application launch.
-            // If not required for your application you can safely delete this method
+            // Conexion SQLite
+            scon = new SQLiteManager();
+
+            // Compruebo usuario
+            if (string.IsNullOrWhiteSpace(UserDataDefaults.GetToken()))
+            {
+                // View login
+                Sesion.Sesion_ViewController sesionViewController = GetViewController(MainStoryboard, "SesionViewController") as Sesion.Sesion_ViewController;
+                sesionViewController.OnLoginSuccess += SesionViewController_OnLoginSuccess;
+                Window.RootViewController = sesionViewController;
+            }
+            else
+            {
+                // Muestro Tab View
+                TabViewController tabViewController = GetViewController(MainStoryboard, "TabViewController") as TabViewController;
+                Window.RootViewController = tabViewController;
+            }
 
             return true;
+        }
+
+        private void SesionViewController_OnLoginSuccess(object sender, System.EventArgs e)
+        {
+            // Muestro Tab View
+            TabViewController tabViewController = GetViewController(MainStoryboard, "TabViewController") as TabViewController;
+            Window.RootViewController = tabViewController;
         }
 
         public override void OnResignActivation(UIApplication application)

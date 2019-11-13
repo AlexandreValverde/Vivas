@@ -34,13 +34,16 @@ namespace Tareas.Servidor
             {
                 connection = new SqliteConnection("Data Source=" + db);
             }
+            else
+            {
+                CreateDB();
+            }
         }
 
         /// <summary>
         /// Creo base de datos SQLite.
         /// </summary>
-        /// <param name="cod">Codigo de creacion de la base de datos.</param>
-        public void CreateDB(string cod)
+        private void CreateDB()
         {
             // Path
             string db = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "tareas.db3");
@@ -52,6 +55,15 @@ namespace Tareas.Servidor
             SqliteConnection.CreateFile(db);
             connection = new SqliteConnection("Data Source=" + db);
 
+            // Codigo creacion base de datos
+            string cod = "CREATE TABLE pais (ID INT NOT NULL, N VARCHAR(255) NOT NULL, PRIMARY KEY(ID));"
+                + "CREATE TABLE provincia (ID INT NOT NULL, IDP INT NOT NULL, N VARCHAR(255) NOT NULL, PRIMARY KEY (ID), FOREIGN KEY (IDP) REFERENCES pais (ID) ON DELETE CASCADE ON UPDATE CASCADE);"
+                + "CREATE TABLE ciudad (ID INT NOT NULL, IDP INT NOT NULL, N VARCHAR(255) NOT NULL, PRIMARY KEY(ID), FOREIGN KEY (IDP) REFERENCES provincia (ID) ON DELETE CASCADE ON UPDATE CASCADE);"
+                + "CREATE TABLE direccion (ID INT NOT NULL, NOMBRE VARCHAR(255) NOT NULL, DIRECCION VARCHAR(255) NOT NULL, NUMERO VARCHAR(20), CP VARCHAR(20), IDC INT NOT NULL, LAT DOUBLE, LNG DOUBLE, PRIMARY KEY(ID), FOREIGN KEY (IDC) REFERENCES ciudad (ID) ON DELETE CASCADE ON UPDATE CASCADE);"
+                + "CREATE TABLE cliente (ID INT NOT NULL, NOMBRE VARCHAR(255) NOT NULL, APELLIDOS VARCHAR(255), TELEFONO VARCHAR(255) NOT NULL, DIRECCION INT NOT NULL, PRIMARY KEY(ID), FOREIGN KEY (DIRECCION) REFERENCES direccion (ID) ON DELETE CASCADE ON UPDATE CASCADE);"
+                + "CREATE TABLE tarea (ID INT NOT NULL, IDC INT NOT NULL, TIPO INT NOT NULL, DIRECCION INT, URGENTE INT NOT NULL, OP2 INT NOT NULL, NOTAS VARCHAR(4000), CREACION TIMESTAMP NOT NULL, PRIMARY KEY(ID), FOREIGN KEY (IDC) REFERENCES cliente (ID) ON DELETE CASCADE ON UPDATE CASCADE, FOREIGN KEY (DIRECCION) REFERENCES direccion (ID) ON DELETE CASCADE ON UPDATE CASCADE);"
+                + "CREATE TABLE tarea_realizada (ID INT NOT NULL, IDU INT NOT NULL, FECHA TIMESTAMP NOT NULL, FOREIGN KEY (ID) REFERENCES tarea (ID) ON DELETE CASCADE ON UPDATE CASCADE, FOREIGN KEY (IDU) REFERENCES usuario (ID) ON DELETE CASCADE ON UPDATE CASCADE)";
+
             lock (l)
             {
                 // Abro conexion
@@ -70,92 +82,6 @@ namespace Tareas.Servidor
 
                 // Cierro conexion
                 connection.Close();
-            }
-
-            // Compruebo que se creo correctamente
-            if (GetPreference(0) != 1)
-            {
-                Console.WriteLine("La base de datos SQLite no se ha podido crear");
-                File.Delete(db);
-            }
-            else
-            {
-                Console.WriteLine("Base de datos SQLite creada");
-            }
-        }
-
-        /// <summary>
-        /// Obtengo version de la base de datos SQLite.
-        /// </summary>
-        /// <returns>La version de la base de datos o 0 si no existe.</returns>
-        public int GetVersion()
-        {
-            // Path
-            string db = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "tareas.db3");
-
-            // Compruebo si existe
-            if (!File.Exists(db))
-            {
-                return 0;
-            }
-
-            // Obtengo version local
-            int v = 0;
-            lock (l)
-            {
-                using (SqliteCommand cmd = connection.CreateCommand())
-                {
-                    connection.Open();
-                    cmd.CommandText = "SELECT URI FROM uris WHERE ID = 0";
-
-                    using (SqliteDataReader reader = cmd.ExecuteReader())
-                    {
-                        // Lee fila
-                        if (reader.Read())
-                        {
-                            v = int.Parse((string)reader[0]);
-                        }
-                    }
-                }
-
-                // Cierro conexion
-                connection.Close();
-            }
-
-            // Devuelvo version
-            return v;
-        }
-
-        /// <summary>
-        /// Actualizo la base de datos SQLite.
-        /// </summary>
-        /// <param name="cod">Codigo de actualizacion.</param>
-        public void UpdateDB(string cod)
-        {
-            lock (l)
-            {
-                // Abro conexion
-                connection.Open();
-
-                // Añado tablas y datos
-                foreach (string cmd in cod.Split(';'))
-                {
-                    using (SqliteCommand c = connection.CreateCommand())
-                    {
-                        c.CommandText = cmd;
-                        c.CommandType = CommandType.Text;
-                        c.ExecuteNonQuery();
-                    }
-                }
-
-                // Cierro conexion
-                connection.Close();
-            }
-
-            // Compruebo que se creo correctamente
-            if (GetPreference(0) != 1)
-            {
-                throw new Exception();
             }
         }
         #endregion

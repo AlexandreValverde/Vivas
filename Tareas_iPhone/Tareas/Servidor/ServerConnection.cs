@@ -15,56 +15,30 @@ namespace Tareas.Servidor
         private static readonly object d = new object();
 
         private URIData[] uris;
-        private string token;
-        private string urlHead;
+        public string token;
+        private readonly string url = "http://192.168.0.35:31416/tareasvivas/app/";
         #endregion
 
         #region Constructor
         /// <summary>
         /// Constructor. Inicializa conexion con el servidor y comprueba que la base de datos SQLite esta creada y actualizada.
         /// </summary>
-        /// <param name="complete">True conexion realizada correctamente, false no se ha podido conectar con el servidor.</param>
-        public ServerConnection(Action<bool> complete)
+        public ServerConnection()
         {
             // Realizo conexiones
             Thread hilo = new Thread(() =>
             {
                 lock (l)
                 {
-                    bool connect = true;
-                    while (connect)
+                    // Cargo URIS
+                    uris = new URIData[]
                     {
-                        try
-                        {
-                            // TODO: Obtengo URIs
+                        new URIData("token/login?id=#&pass=#", 1, 1, 0, 0),
+                        new URIData("users/login?email=#&pass=#", 1, 1, 0, 0)
+                    };
 
-                            // Obtengo token
-                            token = "0";
-                            GetToken();
-
-                            // SQLite
-                            int sqlv = SQLite.Connection().GetVersion();
-                            if (sqlv == 0)
-                            {
-                                // Creo base de datos
-                                CreateDB();
-                            }
-                            else
-                            {
-                                // Compruebo si esta actualizada
-                                UpdateDB(sqlv.ToString());
-                            }
-
-                            // Compruebo conexion
-                            connect &= token == "0";
-                        }
-                        catch (Exception)
-                        {
-                            connect = true;
-                        }
-                    }
-                    // Conexion completada
-                    complete?.Invoke(true);
+                    // Obtengo token
+                    GetToken();
                 }
             })
             {
@@ -72,99 +46,38 @@ namespace Tareas.Servidor
             };
             hilo.Start();
         }
-
-        /// <summary>
-        /// Obtiene el codigo de creacion y crea la base de datos local SQLite.
-        /// </summary>
-        private void CreateDB()
-        {
-            // URI
-            URIData u = new URIData
-            {
-                Url = "v/c",
-                Method = 1,
-                Accept = 1,
-                Authu = 2
-            };
-
-            // Realizo conexion
-            Connection(u, (arg1, arg2) =>
-            {
-                if (arg1)
-                {
-                    SQLite.Connection().CreateDB(arg2);
-                }
-                else
-                {
-                    if ((arg2 ?? "null").Equals("401"))
-                    {
-                        GetTokenFromServer();
-                        token = null;
-                    }
-                }
-                lock (d)
-                {
-                    Monitor.Pulse(d);
-                }
-            });
-            lock (d)
-            {
-                Monitor.Wait(d);
-            }
-        }
-
-        /// <summary>
-        /// Comprueba si la base de datos SQLite esta actualizada y la actualiza si es necesario.
-        /// </summary>
-        /// <param name="versionSQLite">Version base de datos SQLite.</param>
-        private void UpdateDB(string versionSQLite)
-        {
-            // Obtengo version app
-            string versionApp = NSBundle.MainBundle.InfoDictionary["CFBundleVersion"].ToString();
-
-            // Conexion
-            GetData(4, new string[] { versionSQLite, versionApp }, null, (arg1) =>
-            {
-                if (arg1 != null)
-                {
-                    // Actualizo base de datos
-                    SQLite.Connection().UpdateDB(arg1);
-                }
-                lock (d)
-                {
-                    Monitor.Pulse(d);
-                }
-            });
-
-            // Espero a que finalice
-            lock (d)
-            {
-                Monitor.Wait(d);
-            }
-        }
         #endregion
 
         #region Token
+        /// <summary>
+        /// Obtiene el token del usuario.
+        /// </summary>
         public void GetToken()
         {
-            
+            // Obtiene token guardado en local
+            token = UserDataDefaults.GetToken();
+
+            // Comprueba
+            if (token == null)
+            {
+                GetTokenFromServer();
+            }
         }
 
         /// <summary>
         /// Obtiene el token del servidor.
         /// </summary>
-        /// <returns>El token.</returns>
-        private void GetTokenFromServer()
+        public void GetTokenFromServer()
         {
             // Variables
             string[] userData = null;
-            URIData uriData = null;
+            URIData uri = null;
 
             // Action
             Action<bool, string> complete = null;
 
             // Inicializo
-            token = "0";
+            token = "";
 
             // Obtengo datos usuario
             userData = UserDataDefaults.GetLoginData();
@@ -173,21 +86,25 @@ namespace Tareas.Servidor
             if (userData != null)
             {
                 // URI
-                //TODO: Obtengo URI
-                uriData.AddData(userData);
+                uri = uris[(int)URIS.GetToken];
+
+                // Añado datos
+                uri.AddData(userData);
 
                 // Action
                 complete += (arg1, arg2) =>
                 {
+                    // Compruebo conexion
                     if (arg1)
                     {
-                        if (arg2 != null)
+                        // Compruebo datos
+                        if (!string.IsNullOrWhiteSpace(arg2))
                         {
-                            if (!arg2.Equals("f") && !arg2.Equals("t") && !arg2.Equals("b"))
-                            {
-                                token = arg2;
-                                // TODO: Guardar token
-                            }
+                            // Guardo token
+                            token = arg2;
+
+                            // Guardo token en local
+                            UserDataDefaults.SetToken(arg2);
                         }
                     }
                     lock (d)
@@ -195,6 +112,15 @@ namespace Tareas.Servidor
                         Monitor.Pulse(d);
                     }
                 };
+
+                // Obtengo datos del servidor
+                Connection(uri, complete);
+
+                // Espero a que finalice
+                lock (d)
+                {
+                    Monitor.Wait(d);
+                }
             }
         }
         #endregion
@@ -208,7 +134,7 @@ namespace Tareas.Servidor
         private NSMutableUrlRequest CreateRequest(URIData uri)
         {
             // Convierto a UTF8
-            string converted = ((NSString)(urlHead + uri.Url)).CreateStringByAddingPercentEscapes(NSStringEncoding.UTF8);
+            string converted = ((NSString)(url + uri.Url)).CreateStringByAddingPercentEscapes(NSStringEncoding.UTF8);
 
             // Method
             NSMutableUrlRequest request = new NSMutableUrlRequest(NSUrl.FromString(converted))
@@ -229,9 +155,9 @@ namespace Tareas.Servidor
             }
 
             // Authorization
-            if (uri.Authu != 0)
+            if (uri.Auth != 0)
             {
-                request["Authorization"] = (token) ?? "";
+                request["Authorization"] = token;
             }
 
             // Body
@@ -271,7 +197,9 @@ namespace Tareas.Servidor
 
             // URI
             URIData uri = null;
-            // Obtener uri
+
+            // Obtengo uri
+            uri = uris[id];
 
             // Compruebo que existe la URI
             if (uri != null)
@@ -284,28 +212,36 @@ namespace Tareas.Servidor
                 {
                     if (bodyData.Length > 0)
                     {
-                        // TODO: Añadir body
+                        uri.Body = CrearJSON.crear(bodyData);
                     }
                 }
+
+                // Depuracion
+                Console.WriteLine("URI -> " + uri.Url);
 
                 // Action
                 Action<bool, string> actionConnection = null;
                 actionConnection += (arg1, arg2) =>
                 {
+                    // Compruebo resultado conexion
                     if (arg1)
                     {
+                        // Devuelvo datos obtenidos del servidor
                         complete(arg2);
                     }
                     else
                     {
+                        // Compruebo si el token esta caducado
                         if ((arg2 ?? "null").Equals("401") && flag)
                         {
+                            // Renuevo token
                             GetTokenFromServer();
                             flag = false;
                             Connection(uri, actionConnection);
                         }
                         else
                         {
+                            // Conexion erronea
                             complete(null);
                         }
                     }
@@ -383,24 +319,29 @@ public class DataDelegate : NSUrlSessionDataDelegate
     {
         if (error != null)
         {
+            // Depuracion
+            Console.WriteLine("Conexion con error -> " + status_code.ToString());
+
             complete(false, status_code.ToString());
         }
         else
         {
+            // Depuracion
+            Console.WriteLine("Conexion con exito -> " + responseBuilder);
+
             complete(true, responseBuilder.ToString());
         }
     }
 }
 
-public static class Manager
+public static class RestManager
 {
     /// <summary>
     /// Inicializa la conexion con el servidor.
     /// </summary>
-    /// <param name="complete">Complete server connection.</param>
-    public static void Init(Action<bool> complete)
+    public static void Init()
     {
-        (UIApplication.SharedApplication.Delegate as AppDelegate).con = new ServerConnection(complete);
+        (UIApplication.SharedApplication.Delegate as AppDelegate).con = new ServerConnection();
     }
 
     /// <summary>

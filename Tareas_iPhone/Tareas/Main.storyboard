@@ -9,7 +9,7 @@
         <!--Sesion View Controller-->
         <scene sceneID="evz-qo-oxP">
             <objects>
-                <viewController id="87v-Qi-ozl" customClass="Sesion_ViewController" sceneMemberID="viewController">
+                <viewController id="87v-Qi-ozl" customClass="Sesion_ViewController" sceneMemberID="viewController" storyboardIdentifier="SesionViewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rim-A5-8kp"/>
                         <viewControllerLayoutGuide type="bottom" id="djQ-EB-Vmc"/>
@@ -24,35 +24,35 @@
                                     <constraint firstAttribute="width" secondItem="Nmb-M3-ANv" secondAttribute="height" multiplier="1:1" id="R6t-hO-iaQ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZD-qC-20r" hidden="YES">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZD-qC-20r">
                                 <rect key="frame" x="45" y="294" width="324" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pg5-dg-gdq" hidden="YES">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pg5-dg-gdq">
                                 <rect key="frame" x="45" y="324.5" width="324" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                                 <connections>
-                                    <action selector="Txt_ValueChanged:" destination="87v-Qi-ozl" id="1397" eventType="valueChanged"/>
+                                    <action selector="ValueChanged_txt:" destination="87v-Qi-ozl" id="2204" eventType="editingChanged"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeQ-I0-QO9" hidden="YES">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeQ-I0-QO9">
                                 <rect key="frame" x="45" y="370.5" width="324" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mVV-jJ-kgt" hidden="YES">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mVV-jJ-kgt">
                                 <rect key="frame" x="45" y="401" width="324" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="password" secureTextEntry="YES"/>
                                 <connections>
-                                    <action selector="Txt_ValueChanged:" destination="87v-Qi-ozl" id="1398" eventType="valueChanged"/>
+                                    <action selector="ValueChanged_txt:" destination="87v-Qi-ozl" id="3011" eventType="editingChanged"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyp-4w-K85" enabled="NO" hidden="YES">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyp-4w-K85" enabled="NO" customClass="ButtonLoad">
                                 <rect key="frame" x="45" y="460" width="324" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -63,7 +63,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="Touch_BtnLogin:" destination="87v-Qi-ozl" id="805" eventType="touchUpInside"/>
+                                    <action selector="Touch_BtnLogin:" destination="87v-Qi-ozl" id="2205" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1120,7 +1120,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="iaK-2V-hhG">
             <objects>
-                <tabBarController id="AXo-tq-H8o" sceneMemberID="viewController">
+                <tabBarController id="AXo-tq-H8o" sceneMemberID="viewController" customClass="TabViewController" storyboardIdentifier="TabViewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xUT-Aj-pbm">
                         <rect key="frame" x="0.0" y="686" width="414" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>

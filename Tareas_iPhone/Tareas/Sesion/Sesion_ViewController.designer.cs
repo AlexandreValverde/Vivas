@@ -7,6 +7,7 @@
 using Foundation;
 using System;
 using System.CodeDom.Compiler;
+using Tareas.Componentes;
 using UIKit;
 
 namespace Tareas.Sesion
@@ -16,7 +17,7 @@ namespace Tareas.Sesion
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnLogin { get; set; }
+        ButtonLoad btnLogin { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -40,11 +41,11 @@ namespace Tareas.Sesion
 
         [Action ("Touch_BtnLogin:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void Touch_BtnLogin (UIKit.UIButton sender);
+        partial void Touch_BtnLogin (ButtonLoad sender);
 
-        [Action ("Txt_ValueChanged:")]
+        [Action ("ValueChanged_txt:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void Txt_ValueChanged (UIKit.UITextField sender);
+        partial void ValueChanged_txt (UIKit.UITextField sender);
 
         void ReleaseDesignerOutlets ()
         {

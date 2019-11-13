@@ -1,5 +1,4 @@
-﻿using System;
-using Foundation;
+﻿using Foundation;
 
 namespace Tareas.Servidor
 {
@@ -8,28 +7,24 @@ namespace Tareas.Servidor
         // Propiedades
         public string Url { set; get; }
         public byte Method, Accept, ContentType;
-        public byte Authu { set; get; }
+        public byte Auth { set; get; }
         public NSData Body { set; get; }
 
         /// <summary>
-        /// Constructor vacio.
+        /// Constructor.
         /// </summary>
-        public URIData()
+        /// <param name="url">URL uri.</param>
+        /// <param name="method">Method.</param>
+        /// <param name="accept">Accept.</param>
+        /// <param name="type">Content type.</param>
+        /// <param name="auth">Autentificacion.</param>
+        public URIData(string url, byte method, byte accept, byte type, byte auth)
         {
-        }
-
-        /// <summary>
-        /// Constructor. Copia tod0s los datos de la URI pasada.
-        /// </summary>
-        /// <param name="uri">URI.</param>
-        public URIData(URIData uri)
-        {
-            Url = uri.Url;
-            Method = uri.Method;
-            Accept = uri.Accept;
-            ContentType = uri.ContentType;
-            Authu = uri.Authu;
-            Body = uri.Body;
+            Url = url;
+            Method = method;
+            Accept = accept;
+            ContentType = type;
+            Auth = auth;
         }
 
         /// <summary>

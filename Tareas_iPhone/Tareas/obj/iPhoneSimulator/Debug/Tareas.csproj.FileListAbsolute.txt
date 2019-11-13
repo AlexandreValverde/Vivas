@@ -1,0 +1,14 @@
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/bin/iPhoneSimulator/Debug/Tareas.exe
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/bin/iPhoneSimulator/Debug/Tareas.pdb
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/bin/iPhoneSimulator/Debug/Xamarin.Essentials.dll
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/bin/iPhoneSimulator/Debug/Xamarin.Essentials.pdb
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhoneSimulator/Debug/Tareas.csprojAssemblyReference.cache
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhoneSimulator/Debug/Tareas.csproj.CopyComplete
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhoneSimulator/Debug/Tareas.exe
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhoneSimulator/Debug/Tareas.pdb
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-13.2.2/ibtool/_BundleResourceWithLogicalName.items
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-13.2.2/actool/_PartialAppManifest.items
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-13.2.2/actool/_BundleResourceWithLogicalName.items
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-13.2.2/coremlc/_PartialAppManifest.items
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-13.2.2/coremlc/_BundleResourceWithLogicalName.items
+/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-13.2.2/optimized/
