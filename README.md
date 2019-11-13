@@ -34,4 +34,4 @@ Procedimientos y clase Mysql añadida al servidor.
 JSON Web Token añadido al servidor.
 
 - <b>13/11/19</b>
-Actualizacion tablas mysql.
+Actualizacion tablas mysql. Actualizacion servidor. View login app IOS creada.
