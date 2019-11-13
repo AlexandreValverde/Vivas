@@ -80,7 +80,7 @@ public class Users {
 	public Response login(@QueryParam("email") String email, @QueryParam("pass") String pass) {
 		try {
 			// Obtengo ID
-			return Response.ok(new Mysql().login(email, pass)).build();
+			return Response.ok(new Mysql().login(email, Encryptor.encrypt(pass))).build();
 		} catch (Exception e) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
