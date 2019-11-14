@@ -35,3 +35,6 @@ JSON Web Token añadido al servidor.
 
 - <b>13/11/19</b>
 Actualizacion tablas mysql. Actualizacion servidor. View login app IOS creada.
+
+- <b>14/11/19</b>
+Actualizacion base de datos. Obtener tareas añadidas al servidor. Imagen usuario añadida.
