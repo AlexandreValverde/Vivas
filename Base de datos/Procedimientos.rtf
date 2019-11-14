@@ -13,8 +13,9 @@
 \
 \
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b\fs28 \cb2 - NUEVO ADMINISTRADOR
+\f0\b\fs28 \cf0 \cb2 - NUEVO ADMINISTRADOR
 \f1\b0\fs24 \cb1 \
 \
 DELIMITER //\
@@ -52,7 +53,7 @@ DELIMITER ;\
 \
 \
 
-\f0\b\fs28 \cb3 - OBTIENE TOKEN
+\f0\b\fs28 \cb2 - OBTIENE TOKEN
 \f1\b0\fs24 \cb1 \
 \
 DELIMITER //\
@@ -66,7 +67,7 @@ DELIMITER ;\
 \
 \
 
-\f0\b\fs28 \cb3 - VERIFICA TOKEN
+\f0\b\fs28 \cb2 - VERIFICA TOKEN
 \f1\b0\fs24 \cb1 \
 \
 DELIMITER //\
@@ -78,4 +79,39 @@ BEGIN\
 END //\
 DELIMITER ;\
 \
-}
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs28 \cf0 \cb3 - OBTIENE NOMBRE USUARIO
+\f1\b0\fs24 \cb1 \
+\
+DELIMITER //\
+CREATE PROCEDURE nombre_usuario (IN ID_USUARIO INT)\
+BEGIN\
+	SELECT NOMBRE FROM usuario WHERE ID = ID_USUARIO;\
+END //\
+DELIMITER ;\
+\
+\
+
+\f0\b\fs28 \cb3 - OBTIENE TODAS LAS TAREAS
+\f1\b0\fs24 \cb1 \
+\
+DELIMITER //\
+CREATE PROCEDURE get_tareas ()\
+BEGIN\
+	SELECT tarea.*, tarea_realizada.ID_USUARIO, tarea_realizada.FECHA FROM tarea LEFT JOIN tarea_realizada ON tarea.ID = tarea_realizada.ID_TAREA;\
+END //\
+DELIMITER ;\
+\
+\
+
+\f0\b\fs28 \cb3 - OBTIENE TAREAS NUEVAS
+\f1\b0\fs24 \cb1 \
+\
+DELIMITER //\
+CREATE PROCEDURE get_tareas_nuevas (IN LASTDATE TIMESTAMP)\
+BEGIN\
+	SELECT tarea.*, tarea_realizada.ID_USUARIO, tarea_realizada.FECHA FROM tarea LEFT JOIN tarea_realizada ON tarea.ID = tarea_realizada.ID_TAREA WHERE tarea.CREACION > LASTDATE OR tarea_realizada.FECHA > LASTDATE;\
+END //\
+DELIMITER ;}
