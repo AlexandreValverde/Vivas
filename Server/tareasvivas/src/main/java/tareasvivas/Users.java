@@ -3,6 +3,7 @@ package tareasvivas;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
@@ -81,6 +82,24 @@ public class Users {
 		try {
 			// Obtengo ID
 			return Response.ok(new Mysql().login(email, Encryptor.encrypt(pass))).build();
+		} catch (Exception e) {
+			return Response.status(Status.NOT_FOUND).build();
+		}
+	}
+	
+	/**
+	 * Obtiene el nombre del usuario seleccionado.
+	 * @param id ID usuario.
+	 * @return Nombre de usuairo.
+	 */
+	@GET
+	@Path("name/{id}")
+	@Secured
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response nombre(@PathParam("id") int id) {
+		try {
+			// Obtengo nombre
+			return Response.ok(new Mysql().getNombre(id)).build();
 		} catch (Exception e) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
