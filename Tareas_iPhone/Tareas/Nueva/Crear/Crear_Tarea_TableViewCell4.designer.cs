@@ -15,23 +15,7 @@ namespace Tareas.Nueva.Crear
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnDirec { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnPais { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnProv { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblCiudad { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblCoords { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -39,7 +23,7 @@ namespace Tareas.Nueva.Crear
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblInfo { get; set; }
+        UIKit.UILabel lblNombreLugar { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -55,53 +39,61 @@ namespace Tareas.Nueva.Crear
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        MapKit.MKMapView map { get; set; }
+        MapKit.MKMapView mapa { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UISwitch switchCoords { get; set; }
+        UIKit.UITextField txtCiudad { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton txtCiudad { get; set; }
+        UIKit.UITextField txtDireccion { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField txtLat { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField txtLng { get; set; }
+        UIKit.UITextField txtNombreLugar { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtNum { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtPais { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtProvincia { get; set; }
+
+        [Action ("TxtCiudad_Changed:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void TxtCiudad_Changed (UIKit.UITextField sender);
+
+        [Action ("TxtDireccion_Changed:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void TxtDireccion_Changed (UIKit.UITextField sender);
+
+        [Action ("TxtLugar_Changed:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void TxtLugar_Changed (UIKit.UITextField sender);
+
+        [Action ("TxtNumero_Changed:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void TxtNumero_Changed (UIKit.UITextField sender);
+
+        [Action ("TxtPais_Changed:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void TxtPais_Changed (UIKit.UITextField sender);
+
+        [Action ("TxtProvincia_Changed:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void TxtProvincia_Changed (UIKit.UITextField sender);
+
         void ReleaseDesignerOutlets ()
         {
-            if (btnDirec != null) {
-                btnDirec.Dispose ();
-                btnDirec = null;
-            }
-
-            if (btnPais != null) {
-                btnPais.Dispose ();
-                btnPais = null;
-            }
-
-            if (btnProv != null) {
-                btnProv.Dispose ();
-                btnProv = null;
-            }
-
             if (lblCiudad != null) {
                 lblCiudad.Dispose ();
                 lblCiudad = null;
-            }
-
-            if (lblCoords != null) {
-                lblCoords.Dispose ();
-                lblCoords = null;
             }
 
             if (lblDirec != null) {
@@ -109,9 +101,9 @@ namespace Tareas.Nueva.Crear
                 lblDirec = null;
             }
 
-            if (lblInfo != null) {
-                lblInfo.Dispose ();
-                lblInfo = null;
+            if (lblNombreLugar != null) {
+                lblNombreLugar.Dispose ();
+                lblNombreLugar = null;
             }
 
             if (lblNum != null) {
@@ -129,14 +121,9 @@ namespace Tareas.Nueva.Crear
                 lblProv = null;
             }
 
-            if (map != null) {
-                map.Dispose ();
-                map = null;
-            }
-
-            if (switchCoords != null) {
-                switchCoords.Dispose ();
-                switchCoords = null;
+            if (mapa != null) {
+                mapa.Dispose ();
+                mapa = null;
             }
 
             if (txtCiudad != null) {
@@ -144,19 +131,29 @@ namespace Tareas.Nueva.Crear
                 txtCiudad = null;
             }
 
-            if (txtLat != null) {
-                txtLat.Dispose ();
-                txtLat = null;
+            if (txtDireccion != null) {
+                txtDireccion.Dispose ();
+                txtDireccion = null;
             }
 
-            if (txtLng != null) {
-                txtLng.Dispose ();
-                txtLng = null;
+            if (txtNombreLugar != null) {
+                txtNombreLugar.Dispose ();
+                txtNombreLugar = null;
             }
 
             if (txtNum != null) {
                 txtNum.Dispose ();
                 txtNum = null;
+            }
+
+            if (txtPais != null) {
+                txtPais.Dispose ();
+                txtPais = null;
+            }
+
+            if (txtProvincia != null) {
+                txtProvincia.Dispose ();
+                txtProvincia = null;
             }
         }
     }

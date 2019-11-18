@@ -26,6 +26,14 @@ namespace Tareas.Nueva.Crear
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView tabla { get; set; }
 
+        [Action ("Add_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void Add_Touch (UIKit.UIBarButtonItem sender);
+
+        [Action ("BtnCancel_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void BtnCancel_Touch (UIKit.UIBarButtonItem sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (btnAdd != null) {

@@ -24,7 +24,7 @@ namespace Tareas.Usuario
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton imgUser { get; set; }
+        UIKit.UIImageView imgPerfil { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -33,6 +33,10 @@ namespace Tareas.Usuario
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblVersion { get; set; }
+
+        [Action ("btnDesconectar_touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnDesconectar_touch (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -46,9 +50,9 @@ namespace Tareas.Usuario
                 btnDesconectar = null;
             }
 
-            if (imgUser != null) {
-                imgUser.Dispose ();
-                imgUser = null;
+            if (imgPerfil != null) {
+                imgPerfil.Dispose ();
+                imgPerfil = null;
             }
 
             if (lblName != null) {

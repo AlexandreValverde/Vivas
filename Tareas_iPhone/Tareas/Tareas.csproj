@@ -144,6 +144,8 @@
         <ImageAsset Include="Assets.xcassets\Usuario.imageset\perfil_original_25px.png" />
         <ImageAsset Include="Assets.xcassets\Default logo.imageset\Contents.json" />
         <ImageAsset Include="Assets.xcassets\Default logo.imageset\Logo-Default.png" />
+        <ImageAsset Include="Assets.xcassets\Usuario_Perfil.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\Usuario_Perfil.imageset\usuario.png" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />
@@ -162,12 +164,14 @@
         <Folder Include="Nueva\" />
         <Folder Include="Nueva\Add\" />
         <Folder Include="Nueva\Crear\" />
-        <Folder Include="Nueva\Buscar\" />
         <Folder Include="Usuario\" />
         <Folder Include="Sesion\" />
         <Folder Include="Assets.xcassets\Default logo.imageset\" />
         <Folder Include="Servidor\" />
         <Folder Include="Componentes\" />
+        <Folder Include="Clases\" />
+        <Folder Include="Localizacion\" />
+        <Folder Include="Assets.xcassets\Usuario_Perfil.imageset\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -227,15 +231,6 @@
         <Compile Include="Nueva\Crear\Crear_Tarea_TableViewCell4.designer.cs">
           <DependentUpon>Crear_Tarea_TableViewCell4.cs</DependentUpon>
         </Compile>
-        <Compile Include="Nueva\Buscar\Buscar_Ubic_ViewController.cs" />
-        <Compile Include="Nueva\Buscar\Buscar_Ubic_ViewController.designer.cs">
-          <DependentUpon>Buscar_Ubic_ViewController.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Nueva\Buscar\Buscar_Ubic_TableSource.cs" />
-        <Compile Include="Nueva\Buscar\Buscar_Ubic_TableViewCell.cs" />
-        <Compile Include="Nueva\Buscar\Buscar_Ubic_TableViewCell.designer.cs">
-          <DependentUpon>Buscar_Ubic_TableViewCell.cs</DependentUpon>
-        </Compile>
         <Compile Include="Usuario\Usuario_ViewController.cs" />
         <Compile Include="Usuario\Usuario_ViewController.designer.cs">
           <DependentUpon>Usuario_ViewController.cs</DependentUpon>
@@ -256,12 +251,21 @@
         <Compile Include="Componentes\ButtonLoad.designer.cs">
           <DependentUpon>ButtonLoad.cs</DependentUpon>
         </Compile>
-        <Compile Include="Servidor\CrearJSON.cs" />
         <Compile Include="Servidor\URIS.cs" />
         <Compile Include="TabViewController.cs" />
         <Compile Include="TabViewController.designer.cs">
           <DependentUpon>TabViewController.cs</DependentUpon>
         </Compile>
+        <Compile Include="Clases\Pais.cs" />
+        <Compile Include="Clases\Provincia.cs" />
+        <Compile Include="Clases\Ciudad.cs" />
+        <Compile Include="Clases\Direccion.cs" />
+        <Compile Include="Clases\Cliente.cs" />
+        <Compile Include="Clases\Coordenadas.cs" />
+        <Compile Include="Clases\Tarea.cs" />
+        <Compile Include="Clases\JSONManager.cs" />
+        <Compile Include="Localizacion\Location.cs" />
+        <Compile Include="Clases\Preferencias.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

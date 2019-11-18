@@ -12,6 +12,9 @@ namespace Tareas
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+            // Inicializo conexion servidor
+            RestManager.Init();
         }
     }
 }

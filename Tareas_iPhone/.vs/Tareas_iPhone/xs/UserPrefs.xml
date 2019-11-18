@@ -1,23 +1,31 @@
 ﻿<Properties StartupConfiguration="{5A00666A-592F-44CF-B5FE-90A2D813C7B2}|Default">
-  <MonoDevelop.Ide.ItemProperties.Tareas PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.958F9918-8CB3-4D36-94BA-BE948C82CB85" HideGettingStarted="True" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Tareas/Sesion/Sesion_ViewController.cs">
+  <MonoDevelop.Ide.ItemProperties.Tareas automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.958F9918-8CB3-4D36-94BA-BE948C82CB85" HideGettingStarted="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Tareas/Tareas/Lista/Lista_Tareas_ViewController.cs">
     <Files>
       <File FileName="Tareas/Main.storyboard" />
-      <File FileName="Tareas/AppDelegate.cs" Line="14" Column="35" />
-      <File FileName="Tareas/Sesion/Sesion_ViewController.cs" Line="61" Column="71" />
-      <File FileName="Tareas/Servidor/ServerConnection.cs" Line="19" Column="84" />
-      <File FileName="Tareas/Servidor/SQLite.cs" />
-      <File FileName="Tareas/Servidor/UserDataDefaults.cs" />
+      <File FileName="Tareas/Tareas/Lista/Lista_Tareas_ViewController.cs" Line="53" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Tareas_iPhone" expanded="True">
             <Node name="Tareas" expanded="True">
-              <Node name="Servidor" expanded="True" />
-              <Node name="Sesion" expanded="True">
-                <Node name="Sesion_ViewController.cs" selected="True" />
+              <Node name="Clases" expanded="True" />
+              <Node name="Localizacion" expanded="True" />
+              <Node name="Nueva" expanded="True">
+                <Node name="Add" expanded="True" />
+                <Node name="Crear" expanded="True" />
               </Node>
+              <Node name="Servidor" expanded="True" />
+              <Node name="Sesion" expanded="True" />
+              <Node name="Tareas" expanded="True">
+                <Node name="Datos" expanded="True" />
+                <Node name="Filtrar" expanded="True" />
+                <Node name="Lista" expanded="True">
+                  <Node name="Lista_Tareas_ViewController.cs" selected="True" />
+                </Node>
+              </Node>
+              <Node name="Usuario" expanded="True" />
             </Node>
           </Node>
         </State>

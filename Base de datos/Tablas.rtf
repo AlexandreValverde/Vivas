@@ -95,8 +95,9 @@ CREATE TABLE direccion (\
 ) CHARACTER SET = UTF8 COLLATE utf8_unicode_ci ENGINE InnoDB;\
 \
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b\fs28 \cb4 - CLIENTES
+\f0\b\fs28 \cf0 \cb4 - CLIENTES
 \f1\b0\fs24 \cb1 \
 \
 CREATE TABLE cliente (\
@@ -114,8 +115,9 @@ CREATE TABLE cliente (\
 ) CHARACTER SET = UTF8 COLLATE utf8_unicode_ci ENGINE InnoDB;\
 \
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b\fs28 \cb5 - TAREAS
+\f0\b\fs28 \cf0 \cb5 - TAREAS
 \f1\b0\fs24 \cb1 \
 \
 CREATE TABLE tarea (\
@@ -147,6 +149,7 @@ CREATE TABLE tarea_realizada (\
 	ID_TAREA INT NOT NULL COMMENT "ID TAREA",\
 	ID_USUARIO INT NOT NULL COMMENT "ID USUARIO",\
 	FECHA TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT "FECHA TAREA REALIZADA",\
+	PRIMARY KEY(ID_TAREA),\
 	INDEX (ID_TAREA),\
 	INDEX (ID_USUARIO),\
 	FOREIGN KEY(ID_TAREA) REFERENCES tarea(ID)\

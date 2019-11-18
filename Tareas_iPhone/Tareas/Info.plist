@@ -46,5 +46,7 @@
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>CFBundleName</key>
 	<string>Tareas</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Permiso de localizacion</string>
 </dict>
 </plist>

@@ -29,6 +29,18 @@ namespace Tareas.Nueva.Crear
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtTel { get; set; }
 
+        [Action ("TxtApellidos_Changed:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void TxtApellidos_Changed (UIKit.UITextField sender);
+
+        [Action ("TxtNombre_Changed:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void TxtNombre_Changed (UIKit.UITextField sender);
+
+        [Action ("TxtTelefono_Changed:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void TxtTelefono_Changed (UIKit.UITextField sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (lblNombre != null) {

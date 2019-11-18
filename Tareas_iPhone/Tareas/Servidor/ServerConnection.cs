@@ -12,9 +12,8 @@ namespace Tareas.Servidor
     {
         #region Variables
         private static readonly object l = new object();
-        private static readonly object d = new object();
 
-        private URIData[] uris;
+        private readonly URIData[] uris;
         public string token;
         private readonly string url = "http://192.168.0.35:31416/tareasvivas/app/";
         #endregion
@@ -25,26 +24,27 @@ namespace Tareas.Servidor
         /// </summary>
         public ServerConnection()
         {
-            // Realizo conexiones
-            Thread hilo = new Thread(() =>
+            // Cargo URIS
+            uris = new URIData[]
             {
-                lock (l)
-                {
-                    // Cargo URIS
-                    uris = new URIData[]
-                    {
-                        new URIData("token/login?id=#&pass=#", 1, 1, 0, 0),
-                        new URIData("users/login?email=#&pass=#", 1, 1, 0, 0)
-                    };
-
-                    // Obtengo token
-                    GetToken();
-                }
-            })
-            {
-                Priority = ThreadPriority.Highest
+                new URIData("token/login?id=#&pass=#", 1, 1, 0, 0),
+                new URIData("users/login?email=#&pass=#", 1, 1, 0, 0),
+                new URIData("users/name/#", 1, 1, 0, 1),
+                new URIData("tareas/get/#", 1, 2, 0, 1),
+                new URIData("lugares/getdireccion/#", 1, 2, 0, 1),
+                new URIData("lugares/getciudad/#", 1, 2, 0, 1),
+                new URIData("lugares/getprovincia/#", 1, 2, 0, 1),
+                new URIData("lugares/getpais/#", 1, 2, 0, 1),
+                new URIData("clientes/getcliente/#", 1, 2, 0, 1),
+                new URIData("clientes/getdireccion/#", 1, 2, 0, 1),
+                new URIData("tareas/completada/#", 3, 1, 0, 1),
+                new URIData("lugares/nueva", 2, 1, 2, 1),
+                new URIData("clientes/nuevo", 2, 1, 2, 1),
+                new URIData("tareas/nueva", 2, 1, 2, 1)
             };
-            hilo.Start();
+
+            // Obtengo token
+            GetToken();
         }
         #endregion
 
@@ -58,7 +58,7 @@ namespace Tareas.Servidor
             token = UserDataDefaults.GetToken();
 
             // Comprueba
-            if (token == null)
+            if (string.IsNullOrWhiteSpace(token))
             {
                 GetTokenFromServer();
             }
@@ -69,24 +69,20 @@ namespace Tareas.Servidor
         /// </summary>
         public void GetTokenFromServer()
         {
-            // Variables
-            string[] userData = null;
-            URIData uri = null;
-
-            // Action
-            Action<bool, string> complete = null;
-
-            // Inicializo
-            token = "";
-
             // Obtengo datos usuario
-            userData = UserDataDefaults.GetLoginData();
+            string[] userData = UserDataDefaults.GetLoginData();
 
             // Preparo conexion
             if (userData != null)
             {
                 // URI
-                uri = uris[(int)URIS.GetToken];
+                URIData uri = new URIData(uris[(int)URIS.GetToken].Url, uris[(int)URIS.GetToken].Method, uris[(int)URIS.GetToken].Accept, uris[(int)URIS.GetToken].ContentType, uris[(int)URIS.GetToken].Auth);
+
+                // Action
+                Action<bool, string> complete = null;
+
+                // Inicializo
+                token = "";
 
                 // Añado datos
                 uri.AddData(userData);
@@ -107,9 +103,9 @@ namespace Tareas.Servidor
                             UserDataDefaults.SetToken(arg2);
                         }
                     }
-                    lock (d)
+                    lock (l)
                     {
-                        Monitor.Pulse(d);
+                        Monitor.Pulse(l);
                     }
                 };
 
@@ -117,9 +113,9 @@ namespace Tareas.Servidor
                 Connection(uri, complete);
 
                 // Espero a que finalice
-                lock (d)
+                lock (l)
                 {
-                    Monitor.Wait(d);
+                    Monitor.Wait(l);
                 }
             }
         }
@@ -189,67 +185,58 @@ namespace Tareas.Servidor
         /// </summary>
         /// <param name="id">ID de la URI.</param>
         /// <param name="data">Datos para crear la consulta.</param>
+        /// <param name="bodyData">Datos que van en el body de la consulta.</param>
         /// <param name="complete">Conexion completada.</param>
-        public void GetData(int id, string[] data, string[] bodyData, Action<string> complete)
+        public void GetData(int id, string[] data, string bodyData, Action<string> complete)
         {
             // Reintento token
             bool flag = true;
 
             // URI
-            URIData uri = null;
+            URIData uri = new URIData(uris[id].Url, uris[id].Method, uris[id].Accept, uris[id].ContentType, uris[id].Auth);
 
-            // Obtengo uri
-            uri = uris[id];
+            // Request
+            uri.AddData(data);
 
-            // Compruebo que existe la URI
-            if (uri != null)
+            // Body
+            if (bodyData != null)
             {
-                // Request
-                uri.AddData(data);
-
-                // Body
-                if (bodyData != null)
+                if (bodyData.Length > 0)
                 {
-                    if (bodyData.Length > 0)
-                    {
-                        uri.Body = CrearJSON.crear(bodyData);
-                    }
+                    uri.Body = bodyData;
                 }
+            }
 
-                // Depuracion
-                Console.WriteLine("URI -> " + uri.Url);
-
-                // Action
-                Action<bool, string> actionConnection = null;
-                actionConnection += (arg1, arg2) =>
+            // Action
+            Action<bool, string> actionConnection = null;
+            actionConnection += (arg1, arg2) =>
+            {
+                // Compruebo resultado conexion
+                if (arg1)
                 {
-                    // Compruebo resultado conexion
-                    if (arg1)
+                    // Devuelvo datos obtenidos del servidor
+                    complete(arg2);
+                }
+                else
+                {
+                    // Compruebo si el token esta caducado
+                    if ((arg2 ?? "null").Equals("401") && flag)
                     {
-                        // Devuelvo datos obtenidos del servidor
-                        complete(arg2);
+                        // Renuevo token
+                        GetTokenFromServer();
+                        flag = false;
+                        Connection(uri, actionConnection);
                     }
                     else
                     {
-                        // Compruebo si el token esta caducado
-                        if ((arg2 ?? "null").Equals("401") && flag)
-                        {
-                            // Renuevo token
-                            GetTokenFromServer();
-                            flag = false;
-                            Connection(uri, actionConnection);
-                        }
-                        else
-                        {
-                            // Conexion erronea
-                            complete(null);
-                        }
+                        // Conexion erronea
+                        complete(null);
                     }
-                };
+                }
+            };
 
-                // Realizo conexion
-                Connection(uri, actionConnection);
-            }
+            // Realizo conexion
+            Connection(uri, actionConnection);
         }
         #endregion
     }
@@ -319,16 +306,10 @@ public class DataDelegate : NSUrlSessionDataDelegate
     {
         if (error != null)
         {
-            // Depuracion
-            Console.WriteLine("Conexion con error -> " + status_code.ToString());
-
             complete(false, status_code.ToString());
         }
         else
         {
-            // Depuracion
-            Console.WriteLine("Conexion con exito -> " + responseBuilder);
-
             complete(true, responseBuilder.ToString());
         }
     }
@@ -347,7 +328,7 @@ public static class RestManager
     /// <summary>
     /// Obtiene la conexion.
     /// </summary>
-    /// <returns>The con.</returns>
+    /// <returns>Conexion con el servidor.</returns>
     public static ServerConnection Connection()
     {
         return (UIApplication.SharedApplication.Delegate as AppDelegate).con;

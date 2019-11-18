@@ -1,6 +1,8 @@
 ﻿using Foundation;
 using UIKit;
 using Tareas.Servidor;
+using System;
+using Tareas.Localizacion;
 
 namespace Tareas
 {
@@ -11,7 +13,13 @@ namespace Tareas
         public ServerConnection con;
 
         // Conexion SQLite
-        public SQLiteManager scon;
+        public SQLite scon;
+
+        // Localizacion
+        public Location loc;
+
+        // Tipo de tarea nueva
+        public bool tipoNueva;
 
         public override UIWindow Window
         {
@@ -32,7 +40,10 @@ namespace Tareas
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
             // Conexion SQLite
-            scon = new SQLiteManager();
+            scon = new SQLite();
+
+            // Localizacion
+            loc = new Location();
 
             // Compruebo usuario
             if (string.IsNullOrWhiteSpace(UserDataDefaults.GetToken()))
@@ -52,11 +63,19 @@ namespace Tareas
             return true;
         }
 
-        private void SesionViewController_OnLoginSuccess(object sender, System.EventArgs e)
+        private void SesionViewController_OnLoginSuccess(object sender, EventArgs e)
         {
             // Muestro Tab View
             TabViewController tabViewController = GetViewController(MainStoryboard, "TabViewController") as TabViewController;
             Window.RootViewController = tabViewController;
+        }
+
+        public void Desconectar()
+        {
+            // Muestro Login View
+            Sesion.Sesion_ViewController sesionViewController = GetViewController(MainStoryboard, "SesionViewController") as Sesion.Sesion_ViewController;
+            sesionViewController.OnLoginSuccess += SesionViewController_OnLoginSuccess;
+            Window.RootViewController = sesionViewController;
         }
 
         public override void OnResignActivation(UIApplication application)

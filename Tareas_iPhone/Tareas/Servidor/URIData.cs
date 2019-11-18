@@ -6,7 +6,9 @@ namespace Tareas.Servidor
     {
         // Propiedades
         public string Url { set; get; }
-        public byte Method, Accept, ContentType;
+        public byte Method { set; get; }
+        public byte Accept { set; get; }
+        public byte ContentType { set; get; }
         public byte Auth { set; get; }
         public NSData Body { set; get; }
 
@@ -53,7 +55,6 @@ namespace Tareas.Servidor
             {
                 case 1: return "text/plain";
                 case 2: return "application/json";
-                case 3: return "text/html";
                 default: return null;
             }
         }

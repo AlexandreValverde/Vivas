@@ -29,6 +29,14 @@ namespace Tareas.Nueva.Crear
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISwitch switchOp2 { get; set; }
 
+        [Action ("SwitchOp2_Changed:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void SwitchOp2_Changed (UIKit.UISwitch sender);
+
+        [Action ("SwitchUrgente_Changed:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void SwitchUrgente_Changed (UIKit.UISwitch sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (lblOp1 != null) {

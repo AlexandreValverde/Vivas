@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using Tareas.Clases;
 
 namespace Tareas.Servidor
 {
@@ -26,24 +27,24 @@ namespace Tareas.Servidor
         }
 
         /// <summary>
-        /// Obtiene los datos para loguearse el usuario actual.
+        /// Obtiene los datos para obtener el token.
         /// </summary>
-        /// <returns>Email y password.</returns>
+        /// <returns>ID usuario y password.</returns>
         public static string[] GetLoginData()
         {
             // Datos
-            string user, pass;
+            string idUser, pass;
 
             // Obtengo usuario
-            user = NSUserDefaults.StandardUserDefaults.StringForKey("UserEmail");
+            idUser = NSUserDefaults.StandardUserDefaults.StringForKey("UserID");
 
             // Obtengo password
             pass = NSUserDefaults.StandardUserDefaults.StringForKey("UserSerial");
 
             // Devuelvo datos
-            if (!string.IsNullOrEmpty(user) && !string.IsNullOrEmpty(pass))
+            if (!string.IsNullOrEmpty(idUser) && !string.IsNullOrEmpty(pass))
             {
-                return new string[] { user, pass };
+                return new string[] { idUser, pass };
             }
             return null;
         }
@@ -87,7 +88,7 @@ namespace Tareas.Servidor
         /// <param name="tipo">Tipo de tareas.</param>
         public static void SetPreferences(int order, int mostrar, int tipo)
         {
-            NSUserDefaults.StandardUserDefaults.SetString(order.ToString(), "Order");
+            NSUserDefaults.StandardUserDefaults.SetString(order.ToString(), "Orden");
             NSUserDefaults.StandardUserDefaults.SetString(mostrar.ToString(), "Mostrar");
             NSUserDefaults.StandardUserDefaults.SetString(tipo.ToString(), "Tipo");
         }
@@ -96,18 +97,25 @@ namespace Tareas.Servidor
         /// Obtengo preferencias usuario.
         /// </summary>
         /// <returns>Preferencias.</returns>
-        public static int[] GetPreferences()
+        public static Preferencias GetPreferences()
         {
-            // Preferencias
-            int[] p = new int[3];
+            // Obtengo datos y devuelvo
+            return new Preferencias
+            {
+                Orden = int.Parse(NSUserDefaults.StandardUserDefaults.StringForKey("Orden")),
+                Mostrar = int.Parse(NSUserDefaults.StandardUserDefaults.StringForKey("Mostrar")),
+                Tipo = int.Parse(NSUserDefaults.StandardUserDefaults.StringForKey("Tipo"))
+            };
+        }
+        #endregion
 
-            // Obtengo preferencias
-            p[0] = int.Parse(NSUserDefaults.StandardUserDefaults.StringForKey("Order"));
-            p[1] = int.Parse(NSUserDefaults.StandardUserDefaults.StringForKey("Mostrar"));
-            p[2] = int.Parse(NSUserDefaults.StandardUserDefaults.StringForKey("Tipo"));
-
-            // Devuelvo
-            return p;
+        #region Eliminar
+        public static void Eliminar()
+        {
+            NSUserDefaults.StandardUserDefaults.SetString("", "UserID");
+            NSUserDefaults.StandardUserDefaults.SetString("", "UserEmail");
+            NSUserDefaults.StandardUserDefaults.SetString("", "UserSerial");
+            NSUserDefaults.StandardUserDefaults.SetString("", "Token");
         }
         #endregion
     }

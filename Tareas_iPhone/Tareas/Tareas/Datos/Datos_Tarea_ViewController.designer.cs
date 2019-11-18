@@ -22,6 +22,10 @@ namespace Tareas.Tareas.Datos
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView tabla { get; set; }
 
+        [Action ("Touch_Completar:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void Touch_Completar (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (btnComplete != null) {

@@ -1,8 +1,8 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2511
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;\red33\green255\blue6;\red33\green255\blue6;}
-{\*\expandedcolortbl;;\cssrgb\c0\c97680\c0;\cssrgb\c0\c97680\c0;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh18000\viewkind0
+{\colortbl;\red255\green255\blue255;\red33\green255\blue6;}
+{\*\expandedcolortbl;;\cssrgb\c0\c97680\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh15140\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\b\fs48 \cf0 PROCEDIMIENTOS
@@ -80,9 +80,8 @@ END //\
 DELIMITER ;\
 \
 \
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b\fs28 \cf0 \cb3 - OBTIENE NOMBRE USUARIO
+\f0\b\fs28 \cb2 - OBTIENE NOMBRE USUARIO
 \f1\b0\fs24 \cb1 \
 \
 DELIMITER //\
@@ -94,24 +93,171 @@ DELIMITER ;\
 \
 \
 
-\f0\b\fs28 \cb3 - OBTIENE TODAS LAS TAREAS
-\f1\b0\fs24 \cb1 \
-\
-DELIMITER //\
-CREATE PROCEDURE get_tareas ()\
-BEGIN\
-	SELECT tarea.*, tarea_realizada.ID_USUARIO, tarea_realizada.FECHA FROM tarea LEFT JOIN tarea_realizada ON tarea.ID = tarea_realizada.ID_TAREA;\
-END //\
-DELIMITER ;\
-\
-\
-
-\f0\b\fs28 \cb3 - OBTIENE TAREAS NUEVAS
+\f0\b\fs28 \cb2 - OBTIENE TAREAS NUEVAS
 \f1\b0\fs24 \cb1 \
 \
 DELIMITER //\
 CREATE PROCEDURE get_tareas_nuevas (IN LASTDATE TIMESTAMP)\
 BEGIN\
 	SELECT tarea.*, tarea_realizada.ID_USUARIO, tarea_realizada.FECHA FROM tarea LEFT JOIN tarea_realizada ON tarea.ID = tarea_realizada.ID_TAREA WHERE tarea.CREACION > LASTDATE OR tarea_realizada.FECHA > LASTDATE;\
+END //\
+DELIMITER ;\
+\
+\
+
+\f0\b\fs28 \cb2 - OBTIENE DIRECCION
+\f1\b0\fs24 \cb1 \
+\
+DELIMITER //\
+CREATE PROCEDURE get_direccion (IN I INT)\
+BEGIN\
+	SELECT * FROM direccion WHERE ID = I;\
+END //\
+DELIMITER ;\
+\
+\
+
+\f0\b\fs28 \cb2 - OBTENGO CIUDAD
+\f1\b0\fs24 \cb1 \
+\
+DELIMITER //\
+CREATE PROCEDURE get_ciudad (IN I INT)\
+BEGIN\
+	SELECT * FROM ciudad WHERE ID = I;\
+END //\
+DELIMITER ;\
+\
+\
+
+\f0\b\fs28 \cb2 - OBTENGO PROVINCIA
+\f1\b0\fs24 \cb1 \
+\
+DELIMITER //\
+CREATE PROCEDURE get_provincia (IN I INT)\
+BEGIN\
+	SELECT * FROM provincia WHERE ID = I;\
+END //\
+DELIMITER ;\
+\
+\
+
+\f0\b\fs28 \cb2 - OBTENGO PAIS
+\f1\b0\fs24 \cb1 \
+\
+DELIMITER //\
+CREATE PROCEDURE get_pais (IN I INT)\
+BEGIN\
+	SELECT * FROM pais WHERE ID = I;\
+END //\
+DELIMITER ;\
+\
+\
+
+\f0\b\fs28 \cb2 - OBTENGO CLIENTE
+\f1\b0\fs24 \cb1 \
+\
+DELIMITER //\
+CREATE PROCEDURE get_cliente (IN I INT)\
+BEGIN\
+	SELECT * FROM cliente WHERE ID = I;\
+END //\
+DELIMITER ;\
+\
+
+\f0\b\fs28 \cb2 - OBTENGO DIRECCION CLIENTE
+\f1\b0\fs24 \cb1 \
+\
+DELIMITER //\
+CREATE PROCEDURE get_direccion_cliente (IN I INT)\
+BEGIN\
+	SELECT * FROM direccion WHERE ID = (SELECT DIRECCION FROM cliente WHERE ID = I);\
+END //\
+DELIMITER ;\
+\
+\
+
+\f0\b\fs28 \cb2 - COMPLETA TAREA
+\f1\b0\fs24 \cb1 \
+\
+DELIMITER //\
+CREATE PROCEDURE completa_tarea (IN IT INT, IN IU INT)\
+BEGIN\
+	INSERT INTO tarea_realizada (ID_TAREA, ID_USUARIO) VALUES (IT, IU);\
+END //\
+DELIMITER ;\
+\
+\
+
+\f0\b\fs28 \cb2 - A\'d1ADE DIRECCION
+\f1\b0\fs24 \cb1 \
+\
+DELIMITER //\
+CREATE PROCEDURE nueva_direccion (IN PA VARCHAR(255), IN PR VARCHAR(255), IN C VARCHAR(255), IN DN VARCHAR(255), IN DC VARCHAR(255), IN DNUM VARCHAR(20), IN LT DOUBLE, IN LG DOUBLE)\
+BEGIN\
+	DECLARE NUEVO_PAIS SMALLINT UNSIGNED;\
+	DECLARE NUEVA_PROVINCIA SMALLINT UNSIGNED;\
+	DECLARE NUEVA_CIUDAD INT;\
+	DECLARE NUEVA_DIRECCION INT;\
+	-- PAIS\
+	SET NUEVO_PAIS = (SELECT ID FROM pais WHERE NOMBRE = PA);\
+	IF NUEVO_PAIS IS NULL THEN\
+		START TRANSACTION;\
+			INSERT INTO pais (NOMBRE) VALUES (PA);\
+			SET NUEVO_PAIS = (SELECT LAST_INSERT_ID());\
+		COMMIT;\
+	END IF;\
+	-- PROVINCIA\
+	SET NUEVA_PROVINCIA = (SELECT ID FROM provincia WHERE NOMBRE = PR);\
+	IF NUEVA_PROVINCIA IS NULL THEN\
+		START TRANSACTION;\
+			INSERT INTO provincia (IDP, NOMBRE) VALUES (NUEVO_PAIS, PR);\
+			SET NUEVA_PROVINCIA = (SELECT LAST_INSERT_ID());\
+		COMMIT;\
+	END IF;\
+	-- CIUDAD\
+	SET NUEVA_CIUDAD = (SELECT ID FROM ciudad WHERE NOMBRE = C);\
+	IF NUEVA_CIUDAD IS NULL THEN\
+		START TRANSACTION;\
+			INSERT INTO ciudad (IDP, NOMBRE) VALUES (NUEVA_PROVINCIA, C);\
+			SET NUEVA_CIUDAD = (SELECT LAST_INSERT_ID());\
+		COMMIT;\
+	END IF;\
+	-- DIRECCION\
+	SET NUEVA_DIRECCION = (SELECT ID FROM direccion WHERE NOMBRE = DN AND DIRECCION = DC AND NUMERO = DNUM AND LAT = LT AND LNG = LG);\
+	IF NUEVA_DIRECCION IS NULL THEN\
+		START TRANSACTION;\
+			INSERT INTO direccion (NOMBRE, DIRECCION, NUMERO, IDC, LAT, LNG) VALUES (DN, DC, DNUM, NUEVA_CIUDAD, LT, LG);\
+			SET NUEVA_DIRECCION = (SELECT LAST_INSERT_ID());\
+		COMMIT;\
+	END IF;\
+	-- DEVUELVO ID\
+	SELECT NUEVA_DIRECCION;\
+END //\
+DELIMITER ;\
+\
+\
+
+\f0\b\fs28 \cb2 - A\'d1ADIR CLIENTE
+\f1\b0\fs24 \cb1 \
+\
+DELIMITER //\
+CREATE PROCEDURE nuevo_cliente (IN N VARCHAR(255), IN A VARCHAR(255), IN T VARCHAR(255), IN D INT)\
+BEGIN\
+	START TRANSACTION;\
+		INSERT INTO cliente (NOMBRE, APELLIDOS, TELEFONO, DIRECCION) VALUES (N, A, T, D);\
+		SELECT LAST_INSERT_ID();\
+	COMMIT;\
+END //\
+DELIMITER ;\
+\
+\
+
+\f0\b\fs28 \cb2 - A\'d1ADIR TAREA
+\f1\b0\fs24 \cb1 \
+\
+DELIMITER //\
+CREATE PROCEDURE nueva_tarea (IN C INT, IN T TINYINT UNSIGNED, IN D INT, IN U TINYINT UNSIGNED, IN O TINYINT UNSIGNED, IN N VARCHAR(4000))\
+BEGIN\
+	INSERT INTO tarea (IDC, TIPO, DIRECCION, URGENTE, OP2, NOTAS) VALUES (C, T, D, U, O, N);\
 END //\
 DELIMITER ;}

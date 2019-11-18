@@ -2,7 +2,7 @@
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh15300\viewkind0
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh15180\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\b\fs48 \cf0 USUARIO MYSQL
@@ -23,4 +23,14 @@ GRANT EXECUTE ON PROCEDURE tareas_vivas.token TO 'uservivas'@localhost;\
 GRANT EXECUTE ON PROCEDURE tareas_vivas.verify_token TO 'uservivas'@localhost;\
 GRANT EXECUTE ON PROCEDURE tareas_vivas.nombre_usuario TO 'uservivas'@localhost;\
 GRANT EXECUTE ON PROCEDURE tareas_vivas.get_tareas TO 'uservivas'@localhost;\
-GRANT EXECUTE ON PROCEDURE tareas_vivas.get_tareas_nuevas TO 'uservivas'@localhost;}
+GRANT EXECUTE ON PROCEDURE tareas_vivas.get_tareas_nuevas TO 'uservivas'@localhost;\
+GRANT EXECUTE ON PROCEDURE tareas_vivas.get_direccion TO 'uservivas'@localhost;\
+GRANT EXECUTE ON PROCEDURE tareas_vivas.get_ciudad TO 'uservivas'@localhost;\
+GRANT EXECUTE ON PROCEDURE tareas_vivas.get_provincia TO 'uservivas'@localhost;\
+GRANT EXECUTE ON PROCEDURE tareas_vivas.get_pais TO 'uservivas'@localhost;\
+GRANT EXECUTE ON PROCEDURE tareas_vivas.get_cliente TO 'uservivas'@localhost;\
+GRANT EXECUTE ON PROCEDURE tareas_vivas.get_direccion_cliente TO 'uservivas'@localhost;\
+GRANT EXECUTE ON PROCEDURE tareas_vivas.completa_tarea TO 'uservivas'@localhost;\
+GRANT EXECUTE ON PROCEDURE tareas_vivas.nuevo_cliente TO 'uservivas'@localhost;\
+GRANT EXECUTE ON PROCEDURE tareas_vivas.nueva_tarea TO 'uservivas'@localhost;\
+GRANT EXECUTE ON PROCEDURE tareas_vivas.nueva_direccion TO 'uservivas'@localhost;}

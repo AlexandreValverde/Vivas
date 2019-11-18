@@ -22,6 +22,14 @@ namespace Tareas.Nueva.Add
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnOp2 { get; set; }
 
+        [Action ("Btn1_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void Btn1_Touch (UIKit.UIButton sender);
+
+        [Action ("Btn2_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void Btn2_Touch (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (btnOp1 != null) {

@@ -44,37 +44,68 @@ namespace Tareas.Sesion
             sender.ShowLoading();
 
             // Conexion con el servidor
-            RestManager.Connection().GetData((int)URIS.Login, new string[] { txtUser.Text.Trim(), txtPass.Text.Trim() }, null, (arg1) =>
+            RestManager.Connection().GetData((int)URIS.Login, new string[] { txtUser.Text.Trim(), txtPass.Text.Trim() }, null, (arg) =>
             {
                 // Compruebo datos
-                if (!string.IsNullOrWhiteSpace(arg1)) // Login correcto
+                if (!string.IsNullOrWhiteSpace(arg)) // Login correcto
                 {
-                    InvokeOnMainThread(() =>
+                    // Compruebo id
+                    if (!arg.Equals("-1"))
                     {
-                        // Guardo ID usuario
-                        UserDataDefaults.SetUserID(arg1);
-
-                        // Obtiene token
-                        RestManager.Connection().GetTokenFromServer();
-
-                        // Login OK
-                        OnLoginSuccess?.Invoke(true, new EventArgs());
-                    });
+                        LoginOk(arg);
+                    }
+                    else
+                    {
+                        LoginError();
+                    }
                 }
                 else // Login incorrecto
                 {
-                    InvokeOnMainThread(() =>
-                    {
-                        // Paro carga
-                        ((ButtonLoad)btnLogin).HideLoading();
-
-                        // Muestro aviso
-                        ShowAlert();
-
-                        // Activo boton
-                        btnLogin.Enabled = true;
-                    });
+                    LoginError();
                 }
+            });
+        }
+
+        /// <summary>
+        /// Login correcto.
+        /// </summary>
+        /// <param name="id">ID usuario.</param>
+        private void LoginOk(string id)
+        {
+            InvokeOnMainThread(() =>
+            {
+                // Guardo login data
+                UserDataDefaults.SetLoginData(txtUser.Text.Trim(), txtPass.Text.Trim());
+
+                // Guardo ID usuario
+                UserDataDefaults.SetUserID(id);
+
+                // Inicializo preferencias
+                UserDataDefaults.SetPreferences(0, 0, 0);
+
+                // Obtiene token
+                RestManager.Connection().GetTokenFromServer();
+
+                // Login OK
+                OnLoginSuccess(true, new EventArgs());
+            });
+        }
+
+        /// <summary>
+        /// Login erroneo.
+        /// </summary>
+        private void LoginError()
+        {
+            InvokeOnMainThread(() =>
+            {
+                // Paro carga
+                btnLogin.HideLoading();
+
+                // Muestro aviso
+                ShowAlert();
+
+                // Activo boton
+                btnLogin.Enabled = true;
             });
         }
 

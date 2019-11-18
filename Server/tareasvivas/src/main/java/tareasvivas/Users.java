@@ -44,6 +44,7 @@ public class Users {
 	
 	/**
 	 * Añade usuario.
+	 * @param header Token con id usuario.
 	 * @param nombre Nombre usuario.
 	 * @param email Email usuario.
 	 * @param pass Password usuario.

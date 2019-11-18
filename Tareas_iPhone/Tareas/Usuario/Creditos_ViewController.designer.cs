@@ -22,6 +22,10 @@ namespace Tareas.Usuario
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextView txtCreditos { get; set; }
 
+        [Action ("Exit_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void Exit_Touch (UIKit.UIBarButtonItem sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (btnExit != null) {

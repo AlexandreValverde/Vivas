@@ -38,6 +38,18 @@ namespace Tareas.Tareas.Filtrar
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblTipo { get; set; }
 
+        [Action ("mostrar_touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void mostrar_touch (UIKit.UIButton sender);
+
+        [Action ("orden_touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void orden_touch (UIKit.UIButton sender);
+
+        [Action ("tipo_touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void tipo_touch (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (btnMostrarSelect != null) {

@@ -12,7 +12,19 @@ namespace Tareas.Usuario
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+            // Texto
+            txtCreditos.Text = "Iconos obtenidos de flaticon.es";
+        }
+
+        /// <summary>
+        /// Touch boton salir.
+        /// </summary>
+        /// <param name="sender"></param>
+        partial void Exit_Touch(UIBarButtonItem sender)
+        {
+            // Vuelvo a la View anterior
+            DismissModalViewController(true);
         }
     }
 }
-

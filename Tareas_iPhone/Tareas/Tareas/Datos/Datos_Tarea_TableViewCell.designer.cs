@@ -23,10 +23,6 @@ namespace Tareas.Tareas.Datos
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblCreador { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblNombre { get; set; }
 
         [Outlet]
@@ -55,11 +51,6 @@ namespace Tareas.Tareas.Datos
             if (lblCiudad != null) {
                 lblCiudad.Dispose ();
                 lblCiudad = null;
-            }
-
-            if (lblCreador != null) {
-                lblCreador.Dispose ();
-                lblCreador = null;
             }
 
             if (lblNombre != null) {
