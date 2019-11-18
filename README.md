@@ -38,3 +38,6 @@ Actualizacion tablas mysql. Actualizacion servidor. View login app IOS creada.
 
 - <b>14/11/19</b>
 Actualizacion base de datos. Obtener tareas añadidas al servidor. Imagen usuario añadida.
+
+- <b>18/11/19</b>
+Avance general.
