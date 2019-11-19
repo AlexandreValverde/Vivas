@@ -1,0 +1,9 @@
+C:\Users\alex_\source\repos\TareasVivas\TareasVivas\bin\Debug\TareasVivas.exe.config
+C:\Users\alex_\source\repos\TareasVivas\TareasVivas\bin\Debug\TareasVivas.exe
+C:\Users\alex_\source\repos\TareasVivas\TareasVivas\bin\Debug\TareasVivas.pdb
+C:\Users\alex_\source\repos\TareasVivas\TareasVivas\obj\Debug\TareasVivas.csprojAssemblyReference.cache
+C:\Users\alex_\source\repos\TareasVivas\TareasVivas\obj\Debug\TareasVivas.Form1.resources
+C:\Users\alex_\source\repos\TareasVivas\TareasVivas\obj\Debug\TareasVivas.Properties.Resources.resources
+C:\Users\alex_\source\repos\TareasVivas\TareasVivas\obj\Debug\TareasVivas.csproj.GenerateResource.cache
+C:\Users\alex_\source\repos\TareasVivas\TareasVivas\obj\Debug\TareasVivas.exe
+C:\Users\alex_\source\repos\TareasVivas\TareasVivas\obj\Debug\TareasVivas.pdb
