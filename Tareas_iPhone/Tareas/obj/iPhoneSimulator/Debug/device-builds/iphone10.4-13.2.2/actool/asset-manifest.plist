@@ -89,6 +89,25 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
+				<string>./Marcador.imageset/[watch][][&lt;=145][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./Marcador.imageset/[watch][][&lt;=145][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./Marcador.imageset/[watch][][&gt;145][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./Marcador.imageset/[watch][][&gt;145][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./Marcador.imageset/[watch][][][2x][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./Marcador.imageset/[watch][][][2x][][][][][][][light][][][][2d][(null)]</string>
+				<string>./Marcador.imageset/[watch][][][][][][][][][][dark][][][][2d][(null)]</string>
+				<string>./Marcador.imageset/[watch][][][][][][][][][][light][][][][2d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-13.2.2/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>The image set "Marcador" has 8 unassigned children.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
 				<string>./Usuario_Perfil.imageset/[watch][][&lt;=145][2x][][][][][][][dark][][][][2d][(null)]</string>
 				<string>./Usuario_Perfil.imageset/[watch][][&lt;=145][2x][][][][][][][light][][][][2d][(null)]</string>
 				<string>./Usuario_Perfil.imageset/[watch][][&gt;145][2x][][][][][][][dark][][][][2d][(null)]</string>
@@ -121,25 +140,6 @@
 			<string>/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-13.2.2/actool/cloned-assets/Assets.xcassets</string>
 			<key>message</key>
 			<string>The image set "Default logo" has 8 unassigned children.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
-				<string>./Marcador.imageset/[watch][][&lt;=145][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./Marcador.imageset/[watch][][&lt;=145][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./Marcador.imageset/[watch][][&gt;145][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./Marcador.imageset/[watch][][&gt;145][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./Marcador.imageset/[watch][][][2x][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./Marcador.imageset/[watch][][][2x][][][][][][][light][][][][2d][(null)]</string>
-				<string>./Marcador.imageset/[watch][][][][][][][][][][dark][][][][2d][(null)]</string>
-				<string>./Marcador.imageset/[watch][][][][][][][][][][light][][][][2d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/alex/Projects/Vivas/Tareas_iPhone/Tareas/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-13.2.2/actool/cloned-assets/Assets.xcassets</string>
-			<key>message</key>
-			<string>The image set "Marcador" has 8 unassigned children.</string>
 			<key>type</key>
 			<string>Ambiguous Content</string>
 		</dict>
