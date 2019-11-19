@@ -146,6 +146,10 @@
         <ImageAsset Include="Assets.xcassets\Default logo.imageset\Logo-Default.png" />
         <ImageAsset Include="Assets.xcassets\Usuario_Perfil.imageset\Contents.json" />
         <ImageAsset Include="Assets.xcassets\Usuario_Perfil.imageset\usuario.png" />
+        <ImageAsset Include="Assets.xcassets\Marcador.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\Marcador.imageset\punto_75px.png" />
+        <ImageAsset Include="Assets.xcassets\Marcador.imageset\punto_50px.png" />
+        <ImageAsset Include="Assets.xcassets\Marcador.imageset\punto_25px.png" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />
@@ -172,6 +176,7 @@
         <Folder Include="Clases\" />
         <Folder Include="Localizacion\" />
         <Folder Include="Assets.xcassets\Usuario_Perfil.imageset\" />
+        <Folder Include="Assets.xcassets\Marcador.imageset\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />

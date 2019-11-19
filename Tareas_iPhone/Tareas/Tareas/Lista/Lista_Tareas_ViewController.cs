@@ -42,7 +42,7 @@ namespace Tareas.Tareas.Lista
             // Elimino tareas SQLite
             SQLiteManager.Connection().DeleteTareas();
 
-            // Obtengo datos servidor (Obtengo fecha de creacion de la ultima tarea para descargar solo las nuevas, las demas las obtengo de SQLite)
+            // Obtengo datos servidor
             RestManager.Connection().GetData((int)URIS.TareasNuevas, new string[] { "1972-01-01 00:00:01" }, null, (arg) =>
             {
                 // Compruebo datos

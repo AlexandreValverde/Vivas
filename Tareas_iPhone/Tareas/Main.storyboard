@@ -139,24 +139,24 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBq-aC-Yc2">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="243.5"/>
-                                        <color key="backgroundColor" colorSpace="custom" customColorSpace="sRGB" red="0.63921568627451" green="0.894117647058823" blue="0.843137254901961" alpha="1"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20" weight="heavy"/>
+                                        <color key="backgroundColor" red="0.63921568627450998" green="0.89411764705882302" blue="0.84313725490196101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                         <state key="normal" title="TIPO 1">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="Btn1_Touch:" destination="d9j-10-3Jq" id="15649" eventType="touchUpInside"/>
+                                            <action selector="Btn1_Touch:" destination="d9j-10-3Jq" eventType="touchUpInside" id="15649"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fke-Uk-6bS">
                                         <rect key="frame" x="0.0" y="263.5" width="335" height="243.5"/>
-                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.97647058823529409" green="0.90588235294117647" blue="0.62352941176470589" alpha="1"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20" weight="heavy"/>
+                                        <color key="backgroundColor" red="0.97647058823529409" green="0.90588235294117647" blue="0.62352941176470589" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                         <state key="normal" title="TIPO 2">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="Btn2_Touch:" destination="d9j-10-3Jq" id="15650" eventType="touchUpInside"/>
+                                            <action selector="Btn2_Touch:" destination="d9j-10-3Jq" eventType="touchUpInside" id="15650"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -177,7 +177,7 @@
                     <connections>
                         <outlet property="btnOp1" destination="VBq-aC-Yc2" id="name-outlet-VBq-aC-Yc2"/>
                         <outlet property="btnOp2" destination="Fke-Uk-6bS" id="name-outlet-Fke-Uk-6bS"/>
-                        <segue id="32346" destination="8K5-pZ-FLX" kind="presentation" identifier="newNavSegue"/>
+                        <segue destination="8K5-pZ-FLX" kind="presentation" identifier="newNavSegue" id="32346"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJ6-T0-Aez" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -386,7 +386,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="continue" textContentType="name"/>
                                                     <connections>
-                                                        <action selector="TxtNombre_Changed:" destination="pyf-mT-7Ve" id="13529" eventType="editingChanged"/>
+                                                        <action selector="TxtNombre_Changed:" destination="pyf-mT-7Ve" eventType="editingChanged" id="13529"/>
                                                     </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APELLIDOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNH-rX-bt1">
@@ -406,7 +406,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                                                     <connections>
-                                                        <action selector="TxtApellidos_Changed:" destination="pyf-mT-7Ve" id="13530" eventType="editingChanged"/>
+                                                        <action selector="TxtApellidos_Changed:" destination="pyf-mT-7Ve" eventType="editingChanged" id="13530"/>
                                                     </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TELÉFONO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zED-yG-mV1">
@@ -426,7 +426,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                                                     <connections>
-                                                        <action selector="TxtTelefono_Changed:" destination="pyf-mT-7Ve" id="13531" eventType="editingChanged"/>
+                                                        <action selector="TxtTelefono_Changed:" destination="pyf-mT-7Ve" eventType="editingChanged" id="13531"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -469,7 +469,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="75X-ya-RBR">
                                                     <rect key="frame" x="311" y="19" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="SwitchUrgente_Changed:" destination="wf9-27-WeJ" id="13818" eventType="editingChanged"/>
+                                                        <action selector="SwitchUrgente_Changed:" destination="wf9-27-WeJ" eventType="editingChanged" id="13818"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URGENTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pou-dd-hcv">
@@ -481,7 +481,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YKt-WH-LcE">
                                                     <rect key="frame" x="311" y="62" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="SwitchOp2_Changed:" destination="wf9-27-WeJ" id="13819" eventType="editingChanged"/>
+                                                        <action selector="SwitchOp2_Changed:" destination="wf9-27-WeJ" eventType="editingChanged" id="13819"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIN AGUA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1E-bU-7RA">
@@ -550,11 +550,11 @@
                                             <outlet property="txtDescrip" destination="b5P-vr-fnv" id="name-outlet-b5P-vr-fnv"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Crear_Tarea_Cell4" rowHeight="709" id="c7w-qC-LIP" customClass="Crear_Tarea_TableViewCell4">
-                                        <rect key="frame" x="0.0" y="632" width="375" height="709"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Crear_Tarea_Cell4" rowHeight="697" id="c7w-qC-LIP" customClass="Crear_Tarea_TableViewCell4">
+                                        <rect key="frame" x="0.0" y="632" width="375" height="697"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c7w-qC-LIP" id="KIc-Ie-sdM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="709"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="697"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="756" text="PAÍS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PI9-AO-NHC">
@@ -607,7 +607,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="TxtNumero_Changed:" destination="c7w-qC-LIP" id="14397" eventType="editingChanged"/>
+                                                        <action selector="TxtNumero_Changed:" destination="c7w-qC-LIP" eventType="editingChanged" id="14397"/>
                                                     </connections>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="akA-mQ-NNY">
@@ -618,7 +618,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="TxtPais_Changed:" destination="c7w-qC-LIP" id="14106" eventType="editingChanged"/>
+                                                        <action selector="TxtPais_Changed:" destination="c7w-qC-LIP" eventType="editingChanged" id="14106"/>
                                                     </connections>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3g2-wX-vAI">
@@ -629,7 +629,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="TxtProvincia_Changed:" destination="c7w-qC-LIP" id="14107" eventType="editingChanged"/>
+                                                        <action selector="TxtProvincia_Changed:" destination="c7w-qC-LIP" eventType="editingChanged" id="14107"/>
                                                     </connections>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h6J-w5-DRV">
@@ -640,7 +640,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="TxtCiudad_Changed:" destination="c7w-qC-LIP" id="14394" eventType="editingChanged"/>
+                                                        <action selector="TxtCiudad_Changed:" destination="c7w-qC-LIP" eventType="editingChanged" id="14394"/>
                                                     </connections>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ou-0j-4cW">
@@ -651,7 +651,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="TxtDireccion_Changed:" destination="c7w-qC-LIP" id="14395" eventType="editingChanged"/>
+                                                        <action selector="TxtDireccion_Changed:" destination="c7w-qC-LIP" eventType="editingChanged" id="14395"/>
                                                     </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="756" text="NOMBRE DIRECCIÓN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdV-rl-QDM">
@@ -671,7 +671,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="TxtLugar_Changed:" destination="c7w-qC-LIP" id="14396" eventType="editingChanged"/>
+                                                        <action selector="TxtLugar_Changed:" destination="c7w-qC-LIP" eventType="editingChanged" id="14396"/>
                                                     </connections>
                                                 </textField>
                                                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="11D-1Y-ou5">
@@ -680,11 +680,19 @@
                                                         <constraint firstAttribute="width" secondItem="11D-1Y-ou5" secondAttribute="height" multiplier="16:9" id="rnU-ev-yfF"/>
                                                     </constraints>
                                                 </mapView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hro-T2-xOg" image="Marcador">
+                                                    <rect key="frame" x="175" y="579" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="BKa-E5-zD9"/>
+                                                        <constraint firstAttribute="width" constant="25" id="uzy-YG-WAh"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="vbM-YT-S7P" firstAttribute="top" secondItem="vdV-rl-QDM" secondAttribute="bottom" constant="8" id="01z-q7-ckO"/>
                                                 <constraint firstItem="bcn-bM-ob4" firstAttribute="top" secondItem="h6J-w5-DRV" secondAttribute="bottom" constant="14" id="3la-dZ-hZA"/>
                                                 <constraint firstItem="vbM-YT-S7P" firstAttribute="leading" secondItem="KIc-Ie-sdM" secondAttribute="leadingMargin" id="5hU-Aw-cmi"/>
+                                                <constraint firstItem="Hro-T2-xOg" firstAttribute="centerY" secondItem="11D-1Y-ou5" secondAttribute="centerY" id="61t-ZW-jU6"/>
                                                 <constraint firstItem="ana-Mg-aaR" firstAttribute="top" secondItem="Kjy-FH-1xc" secondAttribute="bottom" constant="8" id="6JP-l8-mBH"/>
                                                 <constraint firstItem="CAm-Z8-Wm2" firstAttribute="top" secondItem="akA-mQ-NNY" secondAttribute="bottom" constant="14" id="9t9-T2-Wpv"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ana-Mg-aaR" secondAttribute="trailing" id="BK7-H1-nCH"/>
@@ -701,15 +709,16 @@
                                                 <constraint firstItem="pDJ-02-DJm" firstAttribute="trailing" secondItem="KIc-Ie-sdM" secondAttribute="trailingMargin" id="WZC-QB-3qP"/>
                                                 <constraint firstItem="PI9-AO-NHC" firstAttribute="top" secondItem="KIc-Ie-sdM" secondAttribute="topMargin" id="Xpc-cp-xd3"/>
                                                 <constraint firstItem="vdV-rl-QDM" firstAttribute="leading" secondItem="KIc-Ie-sdM" secondAttribute="leadingMargin" id="Y7d-C0-rCs"/>
+                                                <constraint firstAttribute="bottom" secondItem="11D-1Y-ou5" secondAttribute="bottom" id="aqw-76-fB4"/>
                                                 <constraint firstItem="bcn-bM-ob4" firstAttribute="leading" secondItem="KIc-Ie-sdM" secondAttribute="leadingMargin" id="bWJ-g6-Dtd"/>
                                                 <constraint firstItem="pDJ-02-DJm" firstAttribute="top" secondItem="3g2-wX-vAI" secondAttribute="bottom" constant="14" id="cZk-mx-EpK"/>
                                                 <constraint firstItem="ana-Mg-aaR" firstAttribute="leading" secondItem="KIc-Ie-sdM" secondAttribute="leadingMargin" id="dF7-WX-Iek"/>
+                                                <constraint firstItem="Hro-T2-xOg" firstAttribute="centerX" secondItem="11D-1Y-ou5" secondAttribute="centerX" id="fkE-QN-tsV"/>
                                                 <constraint firstItem="akA-mQ-NNY" firstAttribute="top" secondItem="PI9-AO-NHC" secondAttribute="bottom" constant="8" id="fva-Aq-8vI"/>
                                                 <constraint firstAttribute="trailing" secondItem="11D-1Y-ou5" secondAttribute="trailing" id="g5f-f6-zdk"/>
                                                 <constraint firstItem="h6J-w5-DRV" firstAttribute="leading" secondItem="KIc-Ie-sdM" secondAttribute="leadingMargin" id="giV-HY-Xug"/>
                                                 <constraint firstItem="Kjy-FH-1xc" firstAttribute="top" secondItem="0ou-0j-4cW" secondAttribute="bottom" constant="14" id="hdg-4K-pIo"/>
                                                 <constraint firstItem="bcn-bM-ob4" firstAttribute="trailing" secondItem="KIc-Ie-sdM" secondAttribute="trailingMargin" id="iCt-4S-wSY"/>
-                                                <constraint firstAttribute="bottom" secondItem="11D-1Y-ou5" secondAttribute="bottom" constant="12" id="iVe-3o-xJd"/>
                                                 <constraint firstItem="h6J-w5-DRV" firstAttribute="top" secondItem="pDJ-02-DJm" secondAttribute="bottom" constant="8" id="jyk-kd-F4Q"/>
                                                 <constraint firstItem="PI9-AO-NHC" firstAttribute="trailing" secondItem="KIc-Ie-sdM" secondAttribute="trailingMargin" id="lSA-9A-svf"/>
                                                 <constraint firstItem="pDJ-02-DJm" firstAttribute="leading" secondItem="KIc-Ie-sdM" secondAttribute="leadingMargin" id="mVk-Kk-cOM"/>
@@ -739,6 +748,7 @@
                                             <outlet property="txtNum" destination="ana-Mg-aaR" id="name-outlet-ana-Mg-aaR"/>
                                             <outlet property="txtPais" destination="akA-mQ-NNY" id="name-outlet-akA-mQ-NNY"/>
                                             <outlet property="txtProvincia" destination="3g2-wX-vAI" id="name-outlet-3g2-wX-vAI"/>
+                                            <outlet property="imgMarcador" destination="Hro-T2-xOg" id="name-outlet-Hro-T2-xOg"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1171,5 +1181,6 @@
         <image name="Usuario" width="25" height="25"/>
         <image name="Usuario Selected" width="25" height="25"/>
         <image name="Usuario_Perfil" width="128" height="128"/>
+        <image name="Marcador" width="25" height="25"/>
     </resources>
 </document>

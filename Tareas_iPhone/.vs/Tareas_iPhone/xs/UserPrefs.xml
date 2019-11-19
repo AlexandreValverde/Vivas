@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{5A00666A-592F-44CF-B5FE-90A2D813C7B2}|Default">
   <MonoDevelop.Ide.ItemProperties.Tareas automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.958F9918-8CB3-4D36-94BA-BE948C82CB85" HideGettingStarted="True" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Tareas/Tareas/Lista/Lista_Tareas_ViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Tareas/Main.storyboard">
     <Files>
       <File FileName="Tareas/Main.storyboard" />
-      <File FileName="Tareas/Tareas/Lista/Lista_Tareas_ViewController.cs" Line="53" Column="22" />
+      <File FileName="Tareas/Tareas/Lista/Lista_Tareas_ViewController.cs" Line="45" Column="38" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,11 +21,10 @@
               <Node name="Tareas" expanded="True">
                 <Node name="Datos" expanded="True" />
                 <Node name="Filtrar" expanded="True" />
-                <Node name="Lista" expanded="True">
-                  <Node name="Lista_Tareas_ViewController.cs" selected="True" />
-                </Node>
+                <Node name="Lista" expanded="True" />
               </Node>
               <Node name="Usuario" expanded="True" />
+              <Node name="Main.storyboard" selected="True" />
             </Node>
           </Node>
         </State>

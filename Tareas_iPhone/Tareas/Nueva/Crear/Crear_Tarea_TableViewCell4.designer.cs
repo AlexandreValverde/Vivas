@@ -15,6 +15,10 @@ namespace Tareas.Nueva.Crear
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView imgMarcador { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblCiudad { get; set; }
 
         [Outlet]
@@ -91,6 +95,11 @@ namespace Tareas.Nueva.Crear
 
         void ReleaseDesignerOutlets ()
         {
+            if (imgMarcador != null) {
+                imgMarcador.Dispose ();
+                imgMarcador = null;
+            }
+
             if (lblCiudad != null) {
                 lblCiudad.Dispose ();
                 lblCiudad = null;
