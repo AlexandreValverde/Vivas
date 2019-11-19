@@ -41,3 +41,6 @@ Actualizacion base de datos. Obtener tareas añadidas al servidor. Imagen usuari
 
 - <b>18/11/19</b>
 Avance general.
+
+- <b>19/11/19</b>
+Actualización procedimiento mysql. Icono marcación añadido en mapa en app IOS. Cliente Windows Forms .NET añadido. Actualización usuarios servidor. Informe final creado.
