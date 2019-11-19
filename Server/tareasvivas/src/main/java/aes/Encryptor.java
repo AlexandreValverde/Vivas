@@ -13,8 +13,8 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class Encryptor {
 
-	// PATH KEYS
-	final private static String keysPath = "/Users/alex/Projects/vivas/Server/";
+	// PATH KEY
+	final private static String keyPath = "/Users/alex/Projects/vivas/Server/";
 	
 	// CIPHER
 	private static Cipher cpe, cpd;
@@ -23,7 +23,7 @@ public class Encryptor {
 	static {
 		try {
 			// Clave secreta
-			SecretKeySpec sk = new SecretKeySpec(Files.readAllBytes(Paths.get(keysPath + "aes.bin")), "AES");
+			SecretKeySpec sk = new SecretKeySpec(Files.readAllBytes(Paths.get(keyPath + "aes.bin")), "AES");
 			cpe = Cipher.getInstance("AES/ECB/PKCS5Padding");
 			cpe.init(Cipher.ENCRYPT_MODE, sk);
 			cpd = Cipher.getInstance("AES/ECB/PKCS5Padding");
@@ -64,7 +64,7 @@ public class Encryptor {
      */
     public static void createKey() throws Exception {
     	// Crea fichero
-    	File file = new File(keysPath + "aes.bin");
+    	File file = new File(keyPath + "aes.bin");
     	
     	// Crea clave
     	KeyGenerator kgen = KeyGenerator.getInstance("AES");

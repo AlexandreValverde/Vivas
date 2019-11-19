@@ -52,20 +52,18 @@ public class Mysql {
 	
 	/**
 	 * Crea un nuevo usuario.
-	 * @param id ID del usuario.
 	 * @param nombre Nombre del usuario.
 	 * @param email Email.
 	 * @param pass Password.
 	 * @throws SQLException Error con la base de datos.
 	 */
-	public void nuevoUsuario (int id, String nombre, String email, String pass) throws SQLException {
+	public void nuevoUsuario (String nombre, String email, String pass) throws SQLException {
 		try {
 			// Creo consulta
-			ps = con.prepareStatement("call nuevo_usuario(?, ?, ?, ?)");
-			ps.setInt(1, id);
-			ps.setString(2, nombre);
-			ps.setString(3, email);
-			ps.setString(4, pass);
+			ps = con.prepareStatement("call nuevo_usuario(?, ?, ?)");
+			ps.setString(1, nombre);
+			ps.setString(2, email);
+			ps.setString(3, pass);
 			
 			// Ejecuto consulta
 			ps.executeUpdate();
